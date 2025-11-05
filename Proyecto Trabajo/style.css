@@ -197,3 +197,130 @@ body {
   .drone-image img{width:200px;} 
   .drone-assemble { width: 200px; }
 }
+
+
+/* Parte del contacto*/
+#contact {
+  padding: 120px 10% 80px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(160deg, #0d1813, #0a100c);
+}
+
+.contact-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-hero h2 {
+  font-size: 2.5em;
+  color: #00ff99;
+  margin-bottom: 10px;
+}
+
+.contact-hero p {
+  font-size: 1.1em;
+  color: #ffffff;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.contact-form {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: rgba(255,255,255,0.08);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,255,153,0.1);
+}
+
+.contact-form label {
+  font-weight: 500;
+  color: #00ff99;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  font-size: 1em;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #00ff99;
+}
+
+.contact-form .btn {
+  align-self: center;
+  margin-top: 10px;
+}
+
+.contact-info {
+  flex: 1 1 250px;
+  color: #fff;
+  font-size: 0.95em;
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,255,153,0.1);
+}
+
+.contact-info p {
+  margin-bottom: 20px; 
+}
+
+
+.contact-info h3 {
+  color: #00ff99;
+  margin-bottom: 15px;
+}
+
+.contact-info a {
+  color: #00ff99;
+  text-decoration: none;
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+
+
+.social-icons img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+@media(max-width:700px) {
+  .contact-container { flex-direction: column; align-items: center; }
+  .contact-info, .contact-form { width: 100%; }
+}
+
+
+
+
+.volver-container {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+
+
