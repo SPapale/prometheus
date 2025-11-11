@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto | AetherDroneX</title>
+  
+  <title id="title-contacto">Contacto | AetherDroneX</title>
+  
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
+  
+  <script defer src="lang.js"></script>
 </head>
 <body>
   <header class="nav">
@@ -14,62 +18,56 @@
       <img src="prometeusLogo.png" alt="Prometheus Logo" class="logo-small">
     </div>
     <nav class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="quienes.html">Quiénes Somos</a>
-      <a href="contacto.html" class="active">Contacto</a>
+      <a href="index.html" id="nav-inicio">Inicio</a>
+      <a href="quienes.html" id="nav-quienes">Quiénes Somos</a>
+      <a href="contacto.html" class="active" id="nav-contacto">Contacto</a>
+      <a href="catalogo.html" id="nav-catalogo">Catálogo</a>
+      
+      <button id="lang-btn" class="lang-btn">🇺🇸 English</button>
     </nav>
   </header>
 
 
   <section id="contact">
     <div class="contact-hero">
-      <h2>Contactanos</h2>
-      <p>¿Tenés una idea, un proyecto o querés saber más sobre AetherDroneX?<br>
+      <h2 id="cont-h2">Contactanos</h2>
+      <p id="cont-p">¿Tenés una idea, un proyecto o querés saber más sobre AetherDroneX?<br>
       Escribinos y trabajemos juntos por un futuro más limpio.</p>
-
     </div>
 
     <div class="contact-container">
-      <!-- formulario -->
       <form class="contact-form">
-        <label for="nombre">Nombre *</label>
+        <label for="nombre" id="cont-l-nombre">Nombre *</label>
         <input type="text" id="nombre" name="nombre" required>
 
-        <label for="email">Correo electrónico *</label>
+        <label for="email" id="cont-l-email">Correo electrónico *</label>
         <input type="email" id="email" name="email" required>
 
-        <label for="empresa">Direccion</label>
+        <label for="empresa" id="cont-l-dir">Direccion</label>
         <input type="text" id="direccion" name="direccion">
 
-        <label for="mensaje">Mensaje *</label>
+        <label for="mensaje" id="cont-l-msg">Mensaje *</label>
         <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
-        <button type="submit" class="btn">Enviar mensaje</button>
-
-
+        <button type="submit" class="btn" id="cont-btn-enviar">Enviar mensaje</button>
       </form>
 
       <div class="contact-info">
-        <h3>Prometheus La cagada va en la taza</h3>
-        <p><strong>Dirección:</strong><br>Av. del Futuro 1450, Buenos Aires, Argentina</p>
-
-        <p><strong>Correo:</strong><br>PrometheusEmpresa@gmail.com</p>
- 
-        <p><strong>Teléfono:</strong><br>+54 9 11 3654-1251</p>
-
+        <h3 id="cont-info-h3">Prometheus</h3>
+        <p id="cont-info-dir"><strong>Dirección:</strong><br>Av. del Futuro 1450, Buenos Aires, Argentina</p>
+        <p id="cont-info-correo"><strong>Correo:</strong><br>PrometheusEmpresa@gmail.com</p>
+        <p id="cont-info-tel"><strong>Teléfono:</strong><br>+54 9 11 3654-1251</p>
       </div>
     </div>
 
-<div class="volver-container">
-  <a href="index.html" class="btn volver">Volver al inicio</a>
-</div>
+    <div class="volver-container">
+      <a href="index.html" class="btn volver" id="cont-btn-volver">Volver al inicio</a>
+    </div>
 
   </section>
 
   <footer>
-
-    
-    <p>© 2025 Prometheus Innovations | AetherDroneX</p>
+    <p id="footer-copy">© 2025 Prometheus | AetherDroneX</p>
   </footer>
 </body>
 </html>

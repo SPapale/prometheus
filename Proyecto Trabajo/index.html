@@ -3,41 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AetherDroneX | Innovación Ambiental</title>
+  
+  <title id="title-home">AetherDroneX | Innovación Ambiental</title>
+  
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
+  
+  <script defer src="lang.js"></script> 
 </head>
 <body>
-  <!-- header -->
   <header class="nav">
     <div class="brand">
       <img src="aetherLogo.png" alt="AetherDroneX Logo" class="logo">
       <img src="prometeusLogo.png" alt="Prometheus Logo" class="logo-small">
     </div>
     <nav class="nav-links">
-      <a href="index.html" class="active">Inicio</a>
-      <a href="quienes.html">Quiénes Somos</a>
-      <a href="contacto.html">Contacto</a>
+      <a href="index.html" class="active" id="nav-inicio">Inicio</a>
+      <a href="quienes.html" id="nav-quienes">Quiénes Somos</a>
+      <a href="contacto.html" id="nav-contacto">Contacto</a>
+      <a href="catalogo.html" id="nav-catalogo">Catálogo</a>
+      
+      <button id="lang-btn" class="lang-btn">🇺🇸 English</button>
     </nav>
   </header>
 
   <section id="hero">
     <div class="hero-content">
-      <h1 class="fade-in">AetherDroneX</h1>
-      <h2 class="fade-in-delay">El dron que purifica el aire</h2>
-      <p class="fade-in-late">
+      <h1 class="fade-in" id="home-h1">AetherDroneX</h1>
+      <h2 class="fade-in-delay" id="home-h2">El dron que purifica el aire</h2>
+      <p class="fade-in-late" id="home-p">
         Tecnología revolucionaria capaz de transformar el agua en oxígeno y energía limpia.
         Inspirado en la fotosíntesis natural, diseñado para un planeta más puro.
       </p>
-      <a href="quienes.html" class="btn">Conocé más</a>
+      <a href="catalogo.html" class="btn" id="home-btn-conoce">Conocé más</a>
     </div>
-
-    <!-- imagen dron con la animacion -->
     <div class="drone-container">
       <img src="img/aetherdroneX.png" alt="AetherDroneX" class="drone-assemble">
     </div>
-
-    <!-- esferas flotando -->
     <div class="floating-spheres">
       <div class="sphere"></div>
       <div class="sphere"></div>
@@ -45,25 +47,52 @@
     </div>
   </section>
 
-  <!-- seccion de info -->
   <section id="info">
     <div class="info-box slide-up">
-      <h3> Captura del agua</h3>
-      <p>AetherDroneX aprovecha las nubes de lluvia y transforma el agua en hidrógeno y oxígeno mediante un proceso de fotosíntesis sintética.</p>
+      <h3 id="home-info1-h3">Captura del agua</h3>
+      <p id="home-info1-p">AetherDroneX aprovecha las nubes de lluvia y transforma el agua en hidrógeno y oxígeno mediante un proceso de fotosíntesis sintética.</p>
     </div>
     <div class="info-box slide-up delay1">
-      <h3> Oxígeno para todos</h3>
-      <p>Devuelve oxígeno puro al ambiente, ayudando a mejorar la calidad del aire en regiones afectadas por la contaminación.</p>
+      <h3 id="home-info2-h3">Oxígeno para todos</h3>
+      <p id="home-info2-p">Devuelve oxígeno puro al ambiente, ayudando a mejorar la calidad del aire en regiones afectadas por la contaminación.</p>
     </div>
     <div class="info-box slide-up delay2">
-      <h3> Energía limpia</h3>
-      <p>El hidrógeno generado se almacena y utiliza como fuente de energía sustentable, reduciendo la dependencia de combustibles fósiles.</p>
+      <h3 id="home-info3-h3">Energía limpia</h3>
+      <p id="home-info3-p">El hidrógeno generado se almacena y utiliza como fuente de energía sustentable, reduciendo la dependencia de combustibles fósiles.</p>
     </div>
   </section>
 
-  <!-- footer -->
+  <section id="mision">
+    <h2 id="home-mision-h2">Nuestra Misión</h2>
+    <p id="home-mision-p">
+      En <strong>AetherDroneX</strong> buscamos transformar los desafíos ambientales en oportunidades.
+      Nuestro propósito es reducir los efectos de las lluvias intensas, purificar el aire y generar energía
+      limpia utilizando tecnología inspirada en la naturaleza.
+    </p>
+  </section>
+
+  <section id="impacto">
+    <h2 id="home-impacto-h2">Impacto Global</h2>
+    <p id="home-impacto-p">
+      AetherDroneX está diseñado para operar en regiones donde las lluvias intensas y la contaminación son un problema,
+      como India, el sudeste asiático o zonas agrícolas afectadas por inundaciones.
+      Nuestro objetivo es mejorar la calidad del aire, prevenir daños en los cultivos y promover la generación
+      de energía limpia a nivel mundial.
+    </p>
+  </section>
+
+  <section id="aliados">
+  <h2 id="home-aliados-h2">Aliados Estratégicos</h2>
+  <p id="home-aliados-p">Colaboramos con empresas líderes en tecnología, energía y meteorología para hacer realidad nuestro proyecto.</p>
+  <div class="aliados-container">
+    <div class="aliado"><img src="img/djilogo.jpg" alt="DJI Logo"></div>
+    <div class="aliado"><img src="img/h2b2-logo.png" alt="H2B2 Logo"></div>
+    <div class="aliado"><img src="img/accuweatherlogo.jpg" alt="AccuWeather Logo"></div>
+  </div>
+</section>
+
   <footer>
-    <p>© 2025 Prometheus Innovations | AetherDroneX</p>
+    <p id="footer-copy">© 2025 Prometheus | AetherDroneX</p>
   </footer>
 </body>
 </html>

@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiénes Somos | AetherDroneX</title>
+  
+  <title id="title-quienes">Quiénes Somos | AetherDroneX</title>
+  
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
+  
+  <script defer src="lang.js"></script>
 </head>
 <body>
   <header class="nav">
@@ -14,23 +18,73 @@
       <img src="prometeusLogo.png" alt="Prometheus Logo" class="logo-small">
     </div>
     <nav class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="quienes.html" class="active">Quiénes Somos</a>
-      <a href="contacto.html">Contacto</a>
+      <a href="index.html" id="nav-inicio">Inicio</a>
+      <a href="quienes.html" class="active" id="nav-quienes">Quiénes Somos</a>
+      <a href="contacto.html" id="nav-contacto">Contacto</a>
+      <a href="catalogo.html" id="nav-catalogo">Catálogo</a>
+      
+      <button id="lang-btn" class="lang-btn">🇺🇸 English</button>
     </nav>
   </header>
-
-  <section id="about">
+<section id="about">
     <div class="about-content">
-      <h2>Somos Prometheus</h2>
-      <p>Una empresa dedicada a fusionar la innovación tecnológica con la sostenibilidad ambiental. Nuestro proyecto <strong>AetherDroneX</strong> busca purificar el aire y generar energía limpia utilizando drones capaces de separar el agua en hidrógeno y oxígeno.</p>
-      <p>Creemos en un futuro donde la tecnología y la naturaleza trabajan juntas. Cada dron Aether es una pieza de esperanza para las regiones afectadas por las lluvias y la contaminación.</p>
-      <a href="index.html" class="btn">Volver al inicio</a>
+      <h2 id="qs-h2">Somos Prometheus</h2>
+      <p id="qs-p1">Una empresa dedicada a fusionar la innovación tecnológica con la sostenibilidad ambiental. Nuestro proyecto <strong>AetherDroneX</strong> busca purificar el aire y generar energía limpia utilizando drones capaces de separar el agua en hidrógeno y oxígeno.</p>
+      <p id="qs-p2">Creemos en un futuro donde la tecnología y la naturaleza trabajan juntas. Cada dron Aether es una pieza de esperanza para las regiones afectadas por las lluvias y la contaminación.</p>
+    </div>
+  </section>
+
+  <section id="mision-vision">
+    <div class="info-box">
+      <h3 id="qs-mision-h3"> Misión</h3>
+      <p id="qs-mision-p">Desarrollar soluciones tecnológicas sostenibles que mejoren la calidad del aire y promuevan el uso responsable de los recursos naturales, integrando innovación y conciencia ambiental.</p>
+    </div>
+
+    <div class="info-box">
+      <h3 id="qs-vision-h3"> Visión</h3>
+      <p id="qs-vision-p">Ser líderes mundiales en tecnología ecológica aplicada a drones, impulsando un planeta más limpio, saludable y conectado con la naturaleza.</p>
+    </div>
+  </section>
+<div id="valores">
+  <h3 id="qs-valores-h3"> Nuestros Valores</h3>
+  <div class="values-wrapper">
+    <ul class="values-list">
+      <li id="qs-val1"><strong>Innovación:</strong> Impulsamos ideas que transforman la relación entre tecnología y medio ambiente.</li>
+      <li id="qs-val2"><strong>Sostenibilidad:</strong> Cada proyecto está diseñado con responsabilidad ecológica.</li>
+      <li id="qs-val3"><strong>Compromiso:</strong> Trabajamos por un futuro más limpio para todos.</li>
+      <li id="qs-val4"><strong>Colaboración:</strong> Creemos en el poder de unir ciencia, comunidad y naturaleza.</li>
+    </ul>
+  </div>
+</div>
+
+
+<section id="ventajas">
+    <h3 id="qs-ventajas-h3"> ¿Por Qué Elegirnos?</h3>
+    <div class="advantages">
+      <div class="adv-card">
+        <h4 id="qs-v1-h4"> Tecnología Propia</h4>
+        <p id="qs-v1-p">Desarrollamos nuestros propios sistemas de fotosíntesis sintética para maximizar la eficiencia energética.</p>
+      </div>
+      <div class="adv-card">
+        <h4 id="qs-v2-h4"> Impacto Ambiental Positivo</h4>
+        <p id="qs-v2-p">Cada dron Aether devuelve oxígeno puro al ambiente, ayudando a regenerar ecosistemas.</p>
+      </div>
+      <div class="adv-card">
+        <h4 id="qs-v3-h4"> Energía Limpia</h4>
+        <p id="qs-v3-p">Transformamos el agua en energía de hidrógeno sin emisiones contaminantes.</p>
+      </div>
+      <div class="adv-card">
+        <h4 id="qs-v4-h4"> Trabajo Colaborativo</h4>
+        <p id="qs-v4-p">Nos asociamos con gobiernos y organizaciones para expandir el impacto positivo global.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="index.html" class="btn" id="qs-btn-volver">Volver al inicio</a>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Prometheus Innovations | AetherDroneX</p>
+    <p id="footer-copy">© 2025 Prometheus | AetherDroneX</p>
   </footer>
 </body>
 </html>
