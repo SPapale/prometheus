@@ -12,6 +12,7 @@ body {
   color: #ffffff; /* color de texto blanco */
   overflow-x: hidden; /* evita el scroll horizontal */
   min-height: 100vh; /* asegura que el cuerpo ocupe toda la altura visible */
+  /* El padding-top se maneja en las media-queries */
 }
 
 /* barra de navegacion superior */
@@ -32,6 +33,12 @@ body {
 /* logo secundario mas pequeño */
 .logo-small { height: 35px; opacity: 0.8; margin-left: 8px; }
 
+/* Contenedor de links */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
 /* enlaces del menu de navegacion */
 .nav-links a {
   color: #ffffff; /* color blanco por defecto */
@@ -46,7 +53,9 @@ body {
 
 /* seccion principal o portada */
 #hero {
+  padding-top: 80px; /* Padding para modo PC */
   height: 100vh; /* ocupa toda la altura de la ventana */
+  box-sizing: border-box;
   display: flex; /* usa flexbox */
   flex-direction: column; /* acomoda los elementos en columna */
   align-items: center; /* centra horizontalmente */
@@ -54,6 +63,12 @@ body {
   text-align: center; /* centra el texto */
   position: relative; /* para poder posicionar otros elementos dentro */
   overflow: hidden; /* evita que algo se salga del contenedor */
+}
+
+/* Ajuste para el hero de Catálogo que es más corto */
+section#hero[style*="height:80vh"] {
+    min-height: 80vh;
+    height: auto;
 }
 
 /* titulo principal */
@@ -210,19 +225,11 @@ body {
   clip-path: none;
 }
 
-/* adaptacion para pantallas pequeñas */
-@media(max-width:600px){
-  .hero-content h1{font-size:2em;} 
-  .hero-content h2{font-size:1.2em;} 
-  .info-box{flex:1 1 100%;} 
-  .drone-image img{width:200px;} 
-  .drone-assemble { width: 200px; }
-}
-
 /* seccion de contacto */
 #contact {
   padding: 120px 10% 80px;
   min-height: 100vh;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -304,12 +311,6 @@ body {
 /* iconos de redes sociales */
 .social-icons { margin-top: 15px; }
 .social-icons img:hover { transform: scale(1.1); opacity: 1; }
-
-/* adapta la seccion contacto a pantallas chicas */
-@media(max-width:700px) {
-  .contact-container { flex-direction: column; align-items: center; }
-  .contact-info, .contact-form { width: 100%; }
-}
 
 /* secciones de valores y ventajas */
 #valores, #ventajas {
@@ -472,15 +473,120 @@ body {
   filter: brightness(1.2);
 }
 
-/* ajustes responsive generales */
-@media screen and (max-width: 1080px) and (max-height: 2400px) {
-  html { font-size: 150%; }
-  .hero-content h1 { font-size: 5em; }
-  .hero-content h2 { font-size: 4em; }
-  .hero-content p { font-size: 2em; line-height: 2; max-width: 95%; }
-  .info-box p, #mision p, #impacto p, #aliados p, .contact-hero p { font-size: 2em; }
-  .values-list li, .adv-card p { font-size: 1em; }
-  .btn { padding: 14px 30px; font-size: 2em; }
-  #mision h2, #impacto h2, #aliados h2, #valores h3, #ventajas h3 { font-size: 2.6em; }
-  section { padding: 100px 8%; }
+/* ======================================= */
+/* === AJUSTES RESPONSIVE (CELULAR) === */
+/* ======================================= */
+
+/* --- Estilos para Tablets y Celulares (hasta 900px) --- */
+@media(max-width: 900px) {
+  
+  /* ---- CAMBIOS EN EL NAV ---- */
+  .nav {
+    flex-direction: column;
+    align-items: flex-start; /* Alinea los items a la izquierda */
+    padding: 10px 5%; /* Achica el padding de la barra */
+  }
+  
+  /* Achica los logos en mobile */
+  .nav .logo { height: 35px; }
+  .nav .logo-small { height: 25px; }
+
+  .nav-links {
+    flex-direction: column; /* Apila los links verticalmente */
+    width: 100%; /* Ocupa todo el ancho */
+    align-items: flex-start; /* Alinea los links a la izquierda */
+    margin-top: 10px;
+  }
+
+  .nav-links a {
+    margin: 5px 0; /* Reduce el espacio vertical entre links */
+    width: 100%;
+    padding: 3px 0; /* Area de click más chica */
+    font-size: 1.1rem; /* Texto legible */
+  }
+
+  .lang-btn {
+    margin-top: 8px; /* Reduce el espacio */
+    width: 100%;
+    text-align: center;
+    margin-left: 0; /* Resetea el margen izquierdo */
+    font-size: 1rem;
+  }
+
+  /*
+  * ---- ¡¡ESTA ES LA SOLUCIÓN!! ----
+  * Agrega padding-top a las secciones principales
+  * para que no queden tapadas por el 'nav' (que ahora es más alto).
+  */
+  #hero, #about, #contact {
+     padding-top: 260px; /* <--- VALOR AJUSTADO */
+     box-sizing: border-box; 
+  }
+
+  /* Ajusta el 'height' del hero en mobile */
+  #hero {
+     height: auto; /* Altura automática para que se vea todo */
+     min-height: 100vh; /* Ocupa al menos toda la pantalla */
+  }
+  
+  /* Arregla el hero de la página catálogo */
+  section#hero[style*="height:80vh"] {
+      height: auto !important;
+      min-height: 80vh !important;
+  }
+  
+  /* Ajusta el padding de las secciones de info */
+  #info, #mision, #impacto, #aliados, #valores, #ventajas {
+      padding: 60px 5%;
+  }
+
+  /* Ajusta el padding de la página de contacto */
+  #contact {
+    padding: 260px 5% 60px 5%; /* <--- VALOR AJUSTADO */
+  }
 }
+
+/* --- Estilos para Celulares Pequeños (hasta 600px) --- */
+@media(max-width:600px){
+  /* Reduce el tamaño de los textos en la portada */
+  .hero-content h1{font-size: 2.5em;}
+  .hero-content h2{font-size: 1.3em;}
+  .hero-content p { font-size: 1em; line-height: 1.5; }
+
+  /* Apila las cajas de info */
+  .info-box{flex:1 1 100%;}
+  
+  .drone-image img{width:200px;}
+  .drone-assemble { width: 200px; }
+
+  /* Ajusta los títulos de las secciones */
+  #mision h2, #impacto h2, #aliados h2, #valores h3, #ventajas h3 {
+    font-size: 1.8em;
+  }
+
+  /* Ajusta los textos de párrafo generales */
+  #mision p, #impacto p, #aliados p, #about p, .contact-hero p {
+    font-size: 1em;
+  }
+
+  /* Achica las tarjetas de ventajas */
+  .adv-card { padding: 20px; }
+  .adv-card h4 { font-size: 1.1rem; }
+  .adv-card p { font-size: 0.9rem; }
+}
+
+/* --- Estilos para Contacto en Celular (hasta 700px) --- */
+@media(max-width:700px) {
+  /* Apila el formulario y la info de contacto */
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-info, .contact-form {
+    width: 100%;
+  }
+}
+
+/* * ELIMINADO el bloque @media (max-width: 1080px)
+ * que causaba los problemas de texto gigante.
+ */
