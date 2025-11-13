@@ -590,3 +590,12 @@ section#hero[style*="height:80vh"] {
 /* * ELIMINADO el bloque @media (max-width: 1080px)
  * que causaba los problemas de texto gigante.
  */
+
+
+.catalogo-hero {
+  min-height: 100vh;    /* ocupa toda la altura visible */
+  height: auto;          /* permite crecer si hay más contenido */
+  padding-bottom: 120px; /* agrega espacio debajo */
+  overflow: visible !important; /* evita que se corte el contenido */
+  justify-content: flex-start;  /* alinea el contenido arriba */
+}
