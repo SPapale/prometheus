@@ -7,93 +7,95 @@
 
 /* estilos generales del cuerpo de la pagina */
 body {
-  font-family: "Poppins", sans-serif; /* define la fuente principal */
-  background: linear-gradient(145deg, #0c0f0d, #0f1f17); /* crea un fondo degradado oscuro */
-  color: #ffffff; /* color de texto blanco */
-  overflow-x: hidden; /* evita el scroll horizontal */
-  min-height: 100vh; /* asegura que el cuerpo ocupe toda la altura visible */
-  /* El padding-top se maneja en las media-queries */
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(145deg, #0c0f0d, #0f1f17);
+  color: #ffffff;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /* barra de navegacion superior */
 .nav {
-  display: flex; /* usa flexbox para alinear elementos */
-  justify-content: space-between; /* separa los elementos a los extremos */
-  align-items: center; /* centra verticalmente */
-  padding: 15px 5%; /* agrega espacio interno */
-  background: rgba(255,255,255,0.05); /* fondo semi transparente */
-  position: fixed; /* fija la barra arriba */
-  width: 100%; /* ocupa todo el ancho */
-  top: 0; /* se posiciona en la parte superior */
-  z-index: 100; /* se mantiene por encima de otros elementos */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background: rgba(255,255,255,0.05);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* Aumenté el z-index para asegurar que esté arriba */
+  flex-wrap: wrap; /* Permite que el menú baje en celular */
 }
 
 /* logo principal en el header */
 .logo { height: 45px; }
-/* logo secundario mas pequeño */
 .logo-small { height: 35px; opacity: 0.8; margin-left: 8px; }
 
-/* Contenedor de links */
+/* --- ESTILOS DEL BOTÓN HAMBURGUESA --- */
+.hamburger {
+  display: none; /* Oculto en PC */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #00ff99; /* Color neón */
+  margin: 5px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* enlaces del menu de navegacion */
 .nav-links {
   display: flex;
   align-items: center;
 }
 
-/* enlaces del menu de navegacion */
 .nav-links a {
-  color: #ffffff; /* color blanco por defecto */
-  text-decoration: none; /* quita el subrayado */
-  margin: 0 10px; /* separa los enlaces */
-  font-weight: 500; /* grosor del texto */
-  transition: 0.3s; /* suaviza los cambios de color */
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+  transition: 0.3s;
 }
-/* cambia el color al pasar el mouse o cuando esta activo */
+
 .nav-links a:hover,
 .nav-links a.active { color: #00ff99; }
 
+
+/* ... [TUS ESTILOS DEL HERO, BOTONES, ESFERAS, ETC. SE MANTIENEN IGUAL] ... */
+/* Copia aquí todo el CSS intermedio que tenías para #hero, info-box, etc. */
+/* Voy directo a la parte RESPONSIVE que es lo que cambia */
+
 /* seccion principal o portada */
 #hero {
-  padding-top: 80px; /* Padding para modo PC */
-  height: 100vh; /* ocupa toda la altura de la ventana */
+  padding-top: 80px; 
+  height: 100vh; 
   box-sizing: border-box;
-  display: flex; /* usa flexbox */
-  flex-direction: column; /* acomoda los elementos en columna */
-  align-items: center; /* centra horizontalmente */
-  justify-content: center; /* centra verticalmente */
-  text-align: center; /* centra el texto */
-  position: relative; /* para poder posicionar otros elementos dentro */
-  overflow: hidden; /* evita que algo se salga del contenedor */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
+  position: relative; 
+  overflow: hidden; 
 }
 
-/* Ajuste para el hero de Catálogo que es más corto */
 section#hero[style*="height:80vh"] {
     min-height: 80vh;
     height: auto;
 }
 
-/* titulo principal */
-.hero-content h1 {
-  font-size: 3em; /* tamaño grande del titulo */
-  color: #00ff99; /* color verde brillante */
-  text-shadow: 0 0 20px rgba(0,255,153,0.5); /* agrega un brillo verde */
-}
+.hero-content h1 { font-size: 3em; color: #00ff99; text-shadow: 0 0 20px rgba(0,255,153,0.5); }
+.hero-content h2 { font-size: 1.6em; margin: 10px 0; opacity: 0.9; }
+.hero-content p { max-width: 600px; margin: 20px auto; line-height: 1.6; color: #ffffff; text-shadow: 0 0 8px rgba(0,255,153,0.5); }
 
-/* subtitulo */
-.hero-content h2 {
-  font-size: 1.6em;
-  margin: 10px 0;
-  opacity: 0.9;
-}
-
-/* parrafo descriptivo en la portada */
-.hero-content p {
-  max-width: 600px;
-  margin: 20px auto;
-  line-height: 1.6; /* espaciado entre lineas */
-  color: #ffffff;
-  text-shadow: 0 0 8px rgba(0,255,153,0.5);
-}
-/* --- Estilo para Botón de Idioma --- */
 .lang-btn {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -106,59 +108,26 @@ section#hero[style*="height:80vh"] {
   font-weight: 500;
   transition: 0.3s;
 }
+.lang-btn:hover { background: #00ff99; color: #0c0f0d; }
 
-.lang-btn:hover {
-  background: #00ff99;
-  color: #0c0f0d;
-}
-
-/* boton principal */
 .btn {
   display: inline-block;
   padding: 12px 25px;
   color: #0c0f0d;
-  background: #00ff99; /* color verde */
-  border-radius: 30px; /* bordes redondeados */
+  background: #00ff99;
+  border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
-  box-shadow: 0 0 15px #00ff99; /* efecto de brillo */
+  box-shadow: 0 0 15px #00ff99;
 }
-.btn:hover {
-  transform: scale(1.1); /* agranda el boton al pasar el mouse */
-  box-shadow: 0 0 25px #00ff99;
-}
+.btn:hover { transform: scale(1.1); box-shadow: 0 0 25px #00ff99; }
 
-/* imagen del dron en la portada */
-.drone-image {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
+.drone-image { display: flex; justify-content: center; margin-top: 20px; }
 .drone-image img { width: 350px; max-width: 90%; }
 
-/* fondo con esferas flotantes decorativas */
-.floating-spheres {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0; left: 0;
-  overflow: hidden;
-  z-index: -1; /* se coloca detras del contenido */
-  pointer-events: none; /* no interfiere con los clics */
-}
-
-/* diseño de las esferas */
-.sphere {
-  position: absolute;
-  border-radius: 50%; /* forma circular */
-  background: radial-gradient(circle, rgba(0,255,153,0.25), transparent); /* degradado */
-  filter: blur(3px);
-  opacity: 0.3;
-  transition: transform 2s ease, opacity 2s ease;
-}
-
-/* posiciones especificas de cada esfera */
+.floating-spheres { position: fixed; width: 100%; height: 100%; top: 0; left: 0; overflow: hidden; z-index: -1; pointer-events: none; }
+.sphere { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(0,255,153,0.25), transparent); filter: blur(3px); opacity: 0.3; transition: transform 2s ease, opacity 2s ease; }
 .sphere:nth-child(1){ width:220px; height:220px; top:8%; left:10%; }
 .sphere:nth-child(2){ width:180px; height:180px; top:20%; left:75%; }
 .sphere:nth-child(3){ width:130px; height:130px; top:55%; left:40%; }
@@ -167,435 +136,139 @@ section#hero[style*="height:80vh"] {
 .sphere:nth-child(6){ width:140px; height:140px; top:35%; left:5%; }
 .sphere:nth-child(7){ width:180px; height:180px; top:10%; left:50%; }
 
-/* seccion de informacion */
-#info {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  padding:100px 20px;
-  background: linear-gradient(160deg, #0d1813, #0a100c);
-  gap:20px;
-}
-/* caja de informacion individual */
-.info-box {
-  flex:1 1 300px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius:20px;
-  padding:25px;
-  text-align:center;
-  box-shadow:0 0 15px rgba(0,255,153,0.1);
-  transition:0.3s;
-}
-.info-box:hover {
-  transform:translateY(-10px); /* efecto de elevacion */
-  box-shadow:0 0 25px oklch(87.916% 0.21339 155.977 / 0.3);
-}
+#info { display:flex; flex-wrap:wrap; justify-content:center; padding:100px 20px; background: linear-gradient(160deg, #0d1813, #0a100c); gap:20px; }
+.info-box { flex:1 1 300px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius:20px; padding:25px; text-align:center; box-shadow:0 0 15px rgba(0,255,153,0.1); transition:0.3s; }
+.info-box:hover { transform:translateY(-10px); box-shadow:0 0 25px oklch(87.916% 0.21339 155.977 / 0.3); }
 .info-box h3 { color: #00ff99; margin-bottom:10px; }
 .info-box p { font-size:1.05em; line-height:1.6; }
 
-/* seccion quienes somos */
-#about {
-  padding: 120px 20px 50px;
-  text-align: center;
-}
-#about h2 {
-  font-size: 2.5em;
-  color: #00ff99;
-  margin-bottom: 20px;
-}
-#about p {
-  font-size: 1.1em;
-  color: #ffffff;
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 10px auto;
-}
+#about { padding: 120px 20px 50px; text-align: center; }
+#about h2 { font-size: 2.5em; color: #00ff99; margin-bottom: 20px; }
+#about p { font-size: 1.1em; color: #ffffff; line-height: 1.6; max-width: 700px; margin: 10px auto; }
 #about .btn { margin-top: 20px; }
 
-/* imagen de armado del dron */
-.drone-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-.drone-assemble {
-  width: 300px;
-  opacity: 1;
-  clip-path: none;
-}
+.drone-container { display: flex; justify-content: center; margin-top: 30px; }
+.drone-assemble { width: 300px; opacity: 1; clip-path: none; }
 
-/* seccion de contacto */
-#contact {
-  padding: 120px 10% 80px;
-  min-height: 100vh;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: linear-gradient(160deg, #0d1813, #0a100c);
-}
-
-/* encabezado de contacto */
-.contact-hero {
-  text-align: center;
-  margin-bottom: 50px;
-}
-.contact-hero h2 {
-  font-size: 2.5em;
-  color: #00ff99;
-  margin-bottom: 10px;
-}
-.contact-hero p {
-  font-size: 1.1em;
-  color: #ffffff;
-  max-width: 700px;
-  line-height: 1.6;
-}
-
-/* contenedor principal del formulario */
-.contact-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: center;
-  width: 100%;
-  max-width: 1000px;
-}
-
-/* formulario de contacto */
-.contact-form {
-  flex: 1 1 400px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  background: rgba(255,255,255,0.08);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0,255,153,0.1);
-}
+#contact { padding: 120px 10% 80px; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; background: linear-gradient(160deg, #0d1813, #0a100c); }
+.contact-hero { text-align: center; margin-bottom: 50px; }
+.contact-hero h2 { font-size: 2.5em; color: #00ff99; margin-bottom: 10px; }
+.contact-hero p { font-size: 1.1em; color: #ffffff; max-width: 700px; line-height: 1.6; }
+.contact-container { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; width: 100%; max-width: 1000px; }
+.contact-form { flex: 1 1 400px; display: flex; flex-direction: column; gap: 15px; background: rgba(255,255,255,0.08); padding: 30px; border-radius: 20px; box-shadow: 0 0 15px rgba(0,255,153,0.1); }
 .contact-form label { font-weight: 500; color: #00ff99; }
-.contact-form input,
-.contact-form textarea {
-  background: rgba(255,255,255,0.1);
-  border: none;
-  border-radius: 10px;
-  padding: 10px;
-  color: white;
-  font-size: 1em;
-}
-.contact-form input:focus,
-.contact-form textarea:focus { outline: 2px solid #00ff99; }
-.contact-form .btn {
-  align-self: center;
-  margin-top: 10px;
-}
-
-/* informacion lateral de contacto */
-.contact-info {
-  flex: 1 1 250px;
-  color: #fff;
-  font-size: 0.95em;
-  background: rgba(255,255,255,0.05);
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0,255,153,0.1);
-}
+.contact-form input, .contact-form textarea { background: rgba(255,255,255,0.1); border: none; border-radius: 10px; padding: 10px; color: white; font-size: 1em; }
+.contact-form input:focus, .contact-form textarea:focus { outline: 2px solid #00ff99; }
+.contact-form .btn { align-self: center; margin-top: 10px; }
+.contact-info { flex: 1 1 250px; color: #fff; font-size: 0.95em; background: rgba(255,255,255,0.05); padding: 25px; border-radius: 20px; box-shadow: 0 0 15px rgba(0,255,153,0.1); }
 .contact-info p { margin-bottom: 20px; }
 .contact-info h3 { color: #00ff99; margin-bottom: 15px; }
-.contact-info a {
-  color: #00ff99;
-  text-decoration: none;
-}
-
-/* iconos de redes sociales */
+.contact-info a { color: #00ff99; text-decoration: none; }
 .social-icons { margin-top: 15px; }
 .social-icons img:hover { transform: scale(1.1); opacity: 1; }
 
-/* secciones de valores y ventajas */
-#valores, #ventajas {
-  background: linear-gradient(160deg, #0d1813, #0a100c);
-  padding: 80px 10%;
-  text-align: center;
-  border-top: 1px solid rgba(0,255,153,0.2);
-}
-#valores h3, #ventajas h3 {
-  font-size: 2.2em;
-  color: #00ff99;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 40px;
-  text-shadow: 0 0 15px rgba(0,255,153,0.5);
-}
-
-/* lista de valores */
-.values-list {
-  list-style: none;
-  padding: 0;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: left;
-}
-.values-list li {
-  background: rgba(255,255,255,0.05);
-  border-left: 4px solid #00ff99;
-  margin-bottom: 15px;
-  padding: 18px 25px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,255,153,0.1);
-  transition: 0.3s ease;
-}
-.values-list li:hover {
-  transform: translateX(5px);
-  box-shadow: 0 0 20px rgba(0,255,153,0.3);
-}
+#valores, #ventajas { background: linear-gradient(160deg, #0d1813, #0a100c); padding: 80px 10%; text-align: center; border-top: 1px solid rgba(0,255,153,0.2); }
+#valores h3, #ventajas h3 { font-size: 2.2em; color: #00ff99; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 40px; text-shadow: 0 0 15px rgba(0,255,153,0.5); }
+.values-list { list-style: none; padding: 0; max-width: 800px; margin: 0 auto; text-align: left; }
+.values-list li { background: rgba(255,255,255,0.05); border-left: 4px solid #00ff99; margin-bottom: 15px; padding: 18px 25px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,255,153,0.1); transition: 0.3s ease; }
+.values-list li:hover { transform: translateX(5px); box-shadow: 0 0 20px rgba(0,255,153,0.3); }
 .values-list strong { color: #00ff99; }
+.advantages { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; margin-top: 40px; }
+.adv-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(0,255,153,0.2); border-radius: 20px; padding: 25px; box-shadow: 0 0 15px rgba(0,255,153,0.1); transition: 0.3s ease; }
+.adv-card:hover { transform: translateY(-10px); box-shadow: 0 0 25px rgba(0,255,153,0.3); }
+.adv-card h4 { color: #00ff99; font-size: 1.2rem; margin-bottom: 10px; text-shadow: 0 0 10px rgba(0,255,153,0.4); }
+.adv-card p { color: #ffffff; font-size: 0.95rem; line-height: 1.6; }
+#ventajas .btn { margin-top: 40px; background: #00ff99; color: #0c0f0d; box-shadow: 0 0 15px #00ff99; font-weight: bold; }
+#ventajas .btn:hover { transform: scale(1.1); box-shadow: 0 0 25px #00ff99; }
 
-/* tarjetas de ventajas */
-.advantages {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
-}
-.adv-card {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(0,255,153,0.2);
-  border-radius: 20px;
-  padding: 25px;
-  box-shadow: 0 0 15px rgba(0,255,153,0.1);
-  transition: 0.3s ease;
-}
-.adv-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(0,255,153,0.3);
-}
-.adv-card h4 {
-  color: #00ff99;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  text-shadow: 0 0 10px rgba(0,255,153,0.4);
-}
-.adv-card p {
-  color: #ffffff;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
+#mision, #impacto, #aliados { background: linear-gradient(160deg, #0d1813, #0a100c); padding: 100px 10%; text-align: center; border-top: 1px solid rgba(0,255,153,0.15); }
+#mision h2, #impacto h2, #aliados h2 { font-size: 2.4em; color: #00ff99; text-transform: uppercase; margin-bottom: 25px; text-shadow: 0 0 15px rgba(0,255,153,0.4); letter-spacing: 1px; }
+#mision p, #impacto p, #aliados p { font-size: 1.1em; line-height: 1.7; max-width: 800px; margin: 0 auto 40px; color: #ffffff; opacity: 0.9; }
+.impact-img img { width: 100%; max-width: 700px; border-radius: 20px; box-shadow: 0 0 25px rgba(0,255,153,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.impact-img img:hover { transform: scale(1.03); box-shadow: 0 0 35px rgba(0,255,153,0.4); }
+.aliados-container { display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap; }
+.aliado img { width: 160px; opacity: 0.85; transition: transform 0.3s ease, opacity 0.3s ease; filter: drop-shadow(0 0 10px rgba(0,255,153,0.3)); }
+.aliado img:hover { transform: scale(1.1); opacity: 1; filter: drop-shadow(0 0 20px rgba(0,255,153,0.6)); }
 
-/* boton volver */
-#ventajas .btn {
-  margin-top: 40px;
-  background: #00ff99;
-  color: #0c0f0d;
-  box-shadow: 0 0 15px #00ff99;
-  font-weight: bold;
-}
-#ventajas .btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px #00ff99;
-}
+.gallery-drones { display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 40px; flex-wrap: wrap; }
+.gallery-item { width: 320px; height: auto; border-radius: 20px; transition: transform 0.3s ease, filter 0.3s ease; box-shadow: 0 0 25px rgba(0,255,153,0.2); }
+.gallery-item:hover { transform: scale(1.05); filter: brightness(1.2); }
 
-/* secciones mision impacto y aliados */
-#mision, #impacto, #aliados {
-  background: linear-gradient(160deg, #0d1813, #0a100c);
-  padding: 100px 10%;
-  text-align: center;
-  border-top: 1px solid rgba(0,255,153,0.15);
-}
-#mision h2, #impacto h2, #aliados h2 {
-  font-size: 2.4em;
-  color: #00ff99;
-  text-transform: uppercase;
-  margin-bottom: 25px;
-  text-shadow: 0 0 15px rgba(0,255,153,0.4);
-  letter-spacing: 1px;
-}
-#mision p, #impacto p, #aliados p {
-  font-size: 1.1em;
-  line-height: 1.7;
-  max-width: 800px;
-  margin: 0 auto 40px;
-  color: #ffffff;
-  opacity: 0.9;
-}
 
-/* imagen de impacto global */
-.impact-img img {
-  width: 100%;
-  max-width: 700px;
-  border-radius: 20px;
-  box-shadow: 0 0 25px rgba(0,255,153,0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.impact-img img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 35px rgba(0,255,153,0.4);
-}
 
-/* logos de aliados */
-.aliados-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
-  flex-wrap: wrap;
-}
-.aliado img {
-  width: 160px;
-  opacity: 0.85;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  filter: drop-shadow(0 0 10px rgba(0,255,153,0.3));
-}
-.aliado img:hover {
-  transform: scale(1.1);
-  opacity: 1;
-  filter: drop-shadow(0 0 20px rgba(0,255,153,0.6));
-}
-
-/* galeria de imagenes de drones */
-.gallery-drones {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  margin-top: 40px;
-  flex-wrap: wrap;
-}
-.gallery-item {
-  width: 320px;
-  height: auto;
-  border-radius: 20px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  box-shadow: 0 0 25px rgba(0,255,153,0.2);
-}
-.gallery-item:hover {
-  transform: scale(1.05);
-  filter: brightness(1.2);
-}
-
-/* ======================================= */
-/* === AJUSTES RESPONSIVE (CELULAR) === */
-/* ======================================= */
-
-/* --- Estilos para Tablets y Celulares (hasta 900px) --- */
 @media(max-width: 900px) {
   
-  /* ---- CAMBIOS EN EL NAV ---- */
-  .nav {
-    flex-direction: column;
-    align-items: flex-start; /* Alinea los items a la izquierda */
-    padding: 10px 5%; /* Achica el padding de la barra */
+  /* mostrar el boton hamburguesa */
+  .hamburger {
+    display: block;
   }
-  
-  /* Achica los logos en mobile */
-  .nav .logo { height: 35px; }
-  .nav .logo-small { height: 25px; }
 
+  /* OCULTAR el menú por defecto en celular */
   .nav-links {
-    flex-direction: column; /* Apila los links verticalmente */
-    width: 100%; /* Ocupa todo el ancho */
-    align-items: flex-start; /* Alinea los links a la izquierda */
-    margin-top: 10px;
+    display: none; 
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    background: rgba(12, 15, 13, 0.95); /* fondo oscuro para que se lea */
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,255,153,0.2);
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 
   .nav-links a {
-    margin: 5px 0; /* Reduce el espacio vertical entre links */
+    margin: 10px 0;
+    font-size: 1.2em;
     width: 100%;
-    padding: 3px 0; /* Area de click más chica */
-    font-size: 1.1rem; /* Texto legible */
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 
   .lang-btn {
-    margin-top: 8px; /* Reduce el espacio */
+    margin: 20px 0 0 0;
     width: 100%;
     text-align: center;
-    margin-left: 0; /* Resetea el margen izquierdo */
-    font-size: 1rem;
   }
 
-  /*
-  * ---- ¡¡ESTA ES LA SOLUCIÓN!! ----
-  * Agrega padding-top a las secciones principales
-  * para que no queden tapadas por el 'nav' (que ahora es más alto).
-  */
+  /* padding normal porque el menu ya no ocupa tanto espacio al estar oculto */
   #hero, #about, #contact {
-     padding-top: 260px; /* <--- VALOR AJUSTADO */
-     box-sizing: border-box; 
+     padding-top: 80px; 
   }
 
-  /* Ajusta el 'height' del hero en mobile */
-  #hero {
-     height: auto; /* Altura automática para que se vea todo */
-     min-height: 100vh; /* Ocupa al menos toda la pantalla */
-  }
+  #hero { height: auto; min-height: 100vh; }
   
-  /* Arregla el hero de la página catálogo */
   section#hero[style*="height:80vh"] {
       height: auto !important;
       min-height: 80vh !important;
   }
   
-  /* Ajusta el padding de las secciones de info */
   #info, #mision, #impacto, #aliados, #valores, #ventajas {
       padding: 60px 5%;
   }
-
-  /* Ajusta el padding de la página de contacto */
-  #contact {
-    padding: 260px 5% 60px 5%; /* <--- VALOR AJUSTADO */
-  }
+  
+  #contact { padding: 80px 5% 60px 5%; }
 }
 
-/* --- Estilos para Celulares Pequeños (hasta 600px) --- */
 @media(max-width:600px){
-  /* Reduce el tamaño de los textos en la portada */
   .hero-content h1{font-size: 2.5em;}
   .hero-content h2{font-size: 1.3em;}
   .hero-content p { font-size: 1em; line-height: 1.5; }
-
-  /* Apila las cajas de info */
   .info-box{flex:1 1 100%;}
-  
   .drone-image img{width:200px;}
   .drone-assemble { width: 200px; }
-
-  /* Ajusta los títulos de las secciones */
-  #mision h2, #impacto h2, #aliados h2, #valores h3, #ventajas h3 {
-    font-size: 1.8em;
-  }
-
-  /* Ajusta los textos de párrafo generales */
-  #mision p, #impacto p, #aliados p, #about p, .contact-hero p {
-    font-size: 1em;
-  }
-
-  /* Achica las tarjetas de ventajas */
+  #mision h2, #impacto h2, #aliados h2, #valores h3, #ventajas h3 { font-size: 1.8em; }
+  #mision p, #impacto p, #aliados p, #about p, .contact-hero p { font-size: 1em; }
   .adv-card { padding: 20px; }
   .adv-card h4 { font-size: 1.1rem; }
   .adv-card p { font-size: 0.9rem; }
 }
 
-/* --- Estilos para Contacto en Celular (hasta 700px) --- */
 @media(max-width:700px) {
-  /* Apila el formulario y la info de contacto */
-  .contact-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .contact-info, .contact-form {
-    width: 100%;
-  }
-}
-
-/* * ELIMINADO el bloque @media (max-width: 1080px)
- * que causaba los problemas de texto gigante.
- */
-
-
-.catalogo-hero {
-  min-height: 100vh;    /* ocupa toda la altura visible */
-  height: auto;          /* permite crecer si hay más contenido */
-  padding-bottom: 120px; /* agrega espacio debajo */
-  overflow: visible !important; /* evita que se corte el contenido */
-  justify-content: flex-start;  /* alinea el contenido arriba */
+  .contact-container { flex-direction: column; align-items: center; }
+  .contact-info, .contact-form { width: 100%; }
 }

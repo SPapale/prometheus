@@ -92,3 +92,14 @@ if (contactForm) {
     }, 4000);
   });
 }
+// ... (todo tu código anterior) ...
+
+// Lógica del Menú Hamburguesa
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active'); // Muestra u oculta el menú
+  });
+}
