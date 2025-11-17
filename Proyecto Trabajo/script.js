@@ -1,13 +1,3 @@
-// aparicion de cajas al hacer scroll
-const boxes = document.querySelectorAll('.info-box');
-window.addEventListener('scroll', () => {
-  const trigger = window.innerHeight * 0.8; // punto donde se activan las cajas
-  boxes.forEach(box => {
-    const boxTop = box.getBoundingClientRect().top; // distancia del elemento al tope
-    if (boxTop < trigger) box.classList.add('show'); // muestra la caja cuando se alcanza el punto
-  });
-});
-
 // efecto de brillo en botones
 document.querySelectorAll('.btn').forEach(btn => {
   btn.addEventListener('mouseenter', () => btn.classList.add('hovering')); // activa el brillo al pasar el mouse
@@ -80,8 +70,11 @@ if (contactForm) {
 
     console.log("formulario enviado simulado"); // muestra en consola la accion
 
+   
+    alert("¡Gracias por contactarnos! Tu mensaje fue enviado correctamente.");
+
     if (messageDiv) {
-        messageDiv.textContent = 'gracias por tu mensaje nos pondremos en contacto pronto'; // mensaje al usuario
+        messageDiv.textContent = 'Gracias por contactarnos'; // mensaje al usuario
     }
 
     setTimeout(() => {
@@ -92,14 +85,15 @@ if (contactForm) {
     }, 4000);
   });
 }
-// ... (todo tu código anterior) ...
 
-// Lógica del Menú Hamburguesa
+
+
+// menu hamburguesa
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 
 if (hamburger && navLinks) {
   hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active'); // Muestra u oculta el menú
+    navLinks.classList.toggle('active'); // muestra u oculta el menu
   });
 }

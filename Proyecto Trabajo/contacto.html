@@ -8,7 +8,6 @@
   
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
-  
   <script defer src="lang.js"></script>
 </head>
 <body>
@@ -17,7 +16,7 @@
       <img src="aetherLogo.png" alt="AetherDroneX Logo" class="logo">
       <img src="prometeusLogo.png" alt="Prometheus Logo" class="logo-small">
     </div>
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú">
       <span></span>
       <span></span>
       <span></span>
@@ -31,7 +30,6 @@
     </nav>
   </header>
 
-
   <section id="contact">
     <div class="contact-hero">
       <h2 id="cont-h2">Contactanos</h2>
@@ -40,21 +38,25 @@
     </div>
 
     <div class="contact-container">
-      <form class="contact-form">
-        <label for="nombre" id="cont-l-nombre">Nombre *</label>
-        <input type="text" id="nombre" name="nombre" required>
 
-        <label for="email" id="cont-l-email">Correo electrónico *</label>
-        <input type="email" id="email" name="email" required>
+<form class="contact-form" id="contact-form">
+  <label for="nombre" id="cont-l-nombre">Nombre *</label>
+  <input type="text" id="nombre" name="nombre" required>
 
-        <label for="empresa" id="cont-l-dir">Direccion</label>
-        <input type="text" id="direccion" name="direccion">
+  <label for="email" id="cont-l-email">Correo electrónico *</label>
+  <input type="email" id="email" name="email" required>
 
-        <label for="mensaje" id="cont-l-msg">Mensaje *</label>
-        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+  <label for="direccion" id="cont-l-dir">Dirección</label>
+  <input type="text" id="direccion" name="direccion">
 
-        <button type="submit" class="btn" id="cont-btn-enviar">Enviar mensaje</button>
-      </form>
+  <label for="mensaje" id="cont-l-msg">Mensaje *</label>
+  <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+  <button type="submit" class="btn" id="cont-btn-enviar">Enviar mensaje</button>
+
+  <div id="form-message"></div>
+</form>
+
 
       <div class="contact-info">
         <h3 id="cont-info-h3">Prometheus</h3>
@@ -73,5 +75,6 @@
   <footer>
     <p id="footer-copy">© 2025 Prometheus | AetherDroneX</p>
   </footer>
+
 </body>
 </html>

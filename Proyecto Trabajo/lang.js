@@ -1,23 +1,23 @@
 // Objeto 'textos' con todas las traducciones
 const textos = {
   es: {
-    // --- Títulos de Página ---
+    // titulos
     "title-home": "AetherDroneX | Innovación Ambiental",
     "title-quienes": "Quiénes Somos | AetherDroneX",
     "title-catalogo": "AetherDroneX | Catálogo & Servicios",
     "title-contacto": "Contacto | AetherDroneX",
 
-    // --- Navegación (Compartido) ---
+    // navegacion
     "nav-inicio": "Inicio",
     "nav-quienes": "Quiénes Somos",
     "nav-contacto": "Contacto",
     "nav-catalogo": "Catálogo",
     "lang-btn": "🇺🇸 English",
 
-    // --- Footer (Compartido) ---
+    // footer
     "footer-copy": "© 2025 Prometheus | AetherDroneX",
 
-    // --- Home (index.html) ---
+    // home
     "home-h1": "AetherDroneX",
     "home-h2": "El dron que purifica el aire",
     "home-p": "Tecnología revolucionaria capaz de transformar el agua en oxígeno y energía limpia. Inspirado en la fotosíntesis natural, diseñado para un planeta más puro.",
@@ -35,7 +35,7 @@ const textos = {
     "home-aliados-h2": "Aliados Estratégicos",
     "home-aliados-p": "Colaboramos con empresas líderes en tecnología, energía y meteorología para hacer realidad nuestro proyecto.",
 
-    // --- Quiénes Somos (quienes.html) ---
+    // quienese somos 
     "qs-h2": "Somos Prometheus",
     "qs-p1": "Una empresa dedicada a fusionar la innovación tecnológica con la sostenibilidad ambiental. Nuestro proyecto <strong>AetherDroneX</strong> busca purificar el aire y generar energía limpia utilizando drones capaces de separar el agua en hidrógeno y oxígeno.",
     "qs-p2": "Creemos en un futuro donde la tecnología y la naturaleza trabajan juntas. Cada dron Aether es una pieza de esperanza para las regiones afectadas por las lluvias y la contaminación.",
@@ -59,7 +59,7 @@ const textos = {
     "qs-v4-p": "Nos asociamos con gobiernos y organizaciones para expandir el impacto positivo global.",
     "qs-btn-volver": "Volver al inicio",
 
-    // --- Catálogo (catalogo.html) ---
+    // catalogo
     "cat-h1": "Catálogo & Servicios",
     "cat-h2": "Tecnología Aether para un futuro más limpio",
     "cat-p": "Descubrí nuestra línea de productos ecológicos diseñados para restaurar el equilibrio ambiental a través de innovación tecnológica.",
@@ -76,7 +76,7 @@ const textos = {
     "cat-cta-p": "Contactanos y te ayudaremos a desarrollar un plan de innovación ambiental adaptado a tu comunidad.",
     "cat-cta-btn": "Contactanos",
 
-    // --- Contacto (contacto.html) ---
+    // contacto
     "cont-h2": "Contactanos",
     "cont-p": "¿Tenés una idea, un proyecto o querés saber más sobre AetherDroneX?<br>Escribinos y trabajemos juntos por un futuro más limpio.",
     "cont-l-nombre": "Nombre *",
@@ -91,23 +91,23 @@ const textos = {
     "cont-btn-volver": "Volver al inicio"
   },
   en: {
-    // --- Títulos de Página ---
+    // titulos
     "title-home": "AetherDroneX | Environmental Innovation",
     "title-quienes": "About Us | AetherDroneX",
     "title-catalogo": "AetherDroneX | Catalog & Services",
     "title-contacto": "Contact | AetherDroneX",
 
-    // --- Navegación (Compartido) ---
+    // navegacion
     "nav-inicio": "Home",
     "nav-quienes": "About Us",
     "nav-contacto": "Contact",
     "nav-catalogo": "Catalog",
     "lang-btn": "🇪🇸 Español",
 
-    // --- Footer (Compartido) ---
+    // footer
     "footer-copy": "© 2025 Prometheus | AetherDroneX",
 
-    // --- Home (index.html) ---
+    // home
     "home-h1": "AetherDroneX",
     "home-h2": "The drone that purifies the air",
     "home-p": "Revolutionary technology capable of transforming water into clean oxygen and energy. Inspired by natural photosynthesis, designed for a purer planet.",
@@ -125,7 +125,7 @@ const textos = {
     "home-aliados-h2": "Strategic Allies",
     "home-aliados-p": "We collaborate with leading companies in technology, energy, and meteorology to make our project a reality.",
 
-    // --- Quiénes Somos (quienes.html) ---
+    // contacto
     "qs-h2": "We are Prometheus",
     "qs-p1": "A company dedicated to merging technological innovation with environmental sustainability. Our <strong>AetherDroneX</strong> project seeks to purify the air and generate clean energy using drones capable of separating water into hydrogen and oxygen.",
     "qs-p2": "We believe in a future where technology and nature work together. Each Aether drone is a piece of hope for regions affected by rain and pollution.",
@@ -149,7 +149,7 @@ const textos = {
     "qs-v4-p": "We partner with governments and organizations to expand positive global impact.",
     "qs-btn-volver": "Back to Home",
 
-    // --- Catálogo (catalogo.html) ---
+    // catalogo
     "cat-h1": "Catalog & Services",
     "cat-h2": "Aether Technology for a cleaner future",
     "cat-p": "Discover our line of ecological products designed to restore environmental balance through technological innovation.",
@@ -166,7 +166,7 @@ const textos = {
     "cat-cta-p": "Contact us and we will help you develop an environmental innovation plan tailored to your community.",
     "cat-cta-btn": "Contact Us",
 
-    // --- Contacto (contacto.html) ---
+    // contacto
     "cont-h2": "Contact Us",
     "cont-p": "Have an idea, a project, or want to know more about AetherDroneX?<br>Write to us and let's work together for a cleaner future.",
     "cont-l-nombre": "Name *",
@@ -182,54 +182,88 @@ const textos = {
   }
 };
 
-// --- Lógica de Traducción ---
 
-// Almacena el idioma actual
+
+
+
+// almacena el idioma actual que eligio el usuario para que no se pierda si recarga
 let idiomaActual = localStorage.getItem("idioma") || "es";
 
-// Función para cambiar el idioma
+
+// funcion que cambia el idioma cuando tocas el boton
 function cambiarIdioma() {
-  idiomaActual = idiomaActual === "es" ? "en" : "es";
-  localStorage.setItem("idioma", idiomaActual); // Guarda la preferencia
-  actualizarTextos();
+// si esta en español pasa a ingles y si esta en ingles pasa a español
+idiomaActual = idiomaActual === "es" ? "en" : "es";
+
+
+// guarda el idioma en localstorage para que quede guardado
+localStorage.setItem("idioma", idiomaActual);
+
+
+// actualiza todos los textos con el idioma nuevo
+actualizarTextos();
 }
 
-// Función que actualiza todos los textos de la página
+
+// funcion que actualiza todos los textos de la pagina
 function actualizarTextos() {
-  const t = textos[idiomaActual];
-  
-  // Itera sobre todas las llaves (IDs) en el objeto de textos
-  for (const id in t) {
-    const elemento = document.getElementById(id);
-    if (elemento) {
-      // Si es el título de la página
-      if (id.startsWith("title-")) {
-        document.title = t[id];
-      }
-      // Si es un botón o input
-      else if (elemento.tagName === "INPUT" || elemento.tagName === "BUTTON") {
-        if (elemento.type === "submit" || elemento.tagName === "BUTTON") {
-          elemento.innerHTML = t[id]; // Cambia el texto del botón
-        } else {
-          elemento.placeholder = t[id]; // Cambia el placeholder
-        }
-      }
-      // Para todos los demás elementos (p, h1, a, li, label...)
-      else {
-        elemento.innerHTML = t[id]; // Cambia el contenido HTML
-      }
-    }
-  }
+
+const t = textos[idiomaActual];
+
+
+// recorre cada id dentro del objeto de traducciones
+for (const id in t) {
+// busca el elemento html con ese id
+const elemento = document.getElementById(id);
+
+
+if (elemento) {
+// si el id empieza con title significa que es el titulo del navegador
+if (id.startsWith("title-")) {
+document.title = t[id];
 }
 
-// Se ejecuta cuando la página se carga
-document.addEventListener("DOMContentLoaded", () => {
-  // Configura el botón de idioma
-  const langBtn = document.getElementById("lang-btn");
-  if (langBtn) {
-    langBtn.addEventListener("click", cambiarIdioma);
-  }
 
-  // Actualiza los textos al idioma guardado
-  actualizarTextos();
+// si es un input o boton cambia su texto o placeholder
+else if (elemento.tagName === "INPUT" || elemento.tagName === "BUTTON") {
+
+
+// si es un boton o un input tipo submit cambia el texto interno
+if (elemento.type === "submit" || elemento.tagName === "BUTTON") {
+elemento.innerHTML = t[id];
+}
+
+
+// si es un input normal cambia el placeholder
+else {
+elemento.placeholder = t[id];
+}
+}
+
+
+// para cualquier otro elemento cambia el html interno
+else {
+elemento.innerHTML = t[id];
+}
+}
+}
+}
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+const langBtn = document.getElementById("lang-btn");
+
+
+
+if (langBtn) {
+langBtn.addEventListener("click", cambiarIdioma);
+}
+
+
+
+actualizarTextos();
 });

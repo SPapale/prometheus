@@ -1,11 +1,13 @@
-/* resetea margenes y paddings para todos los elementos */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* estilos generales del cuerpo de la pagina */
+
+
+/* estilo general de la pagina tipo fondo oscuro futurista */
 body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(145deg, #0c0f0d, #0f1f17);
@@ -14,27 +16,43 @@ body {
   min-height: 100vh;
 }
 
-/* barra de navegacion superior */
+
+
+/* barra de arriba que siempre queda fija */
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 15px 5%;
   background: rgba(255,255,255,0.05);
+
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 1000; /* Aumenté el z-index para asegurar que esté arriba */
-  flex-wrap: wrap; /* Permite que el menú baje en celular */
+
+  z-index: 1000; /* esto lo puse alto para que no quede abajo */
+  flex-wrap: wrap; /* asi se rompe en varias lineas en celu */
 }
 
-/* logo principal en el header */
-.logo { height: 45px; }
-.logo-small { height: 35px; opacity: 0.8; margin-left: 8px; }
 
-/* --- ESTILOS DEL BOTÓN HAMBURGUESA --- */
+
+/* logos del header */
+.logo {
+  height: 45px;
+}
+
+.logo-small {
+  height: 35px;
+  opacity: 0.8;
+  margin-left: 8px;
+}
+
+
+
+/* las tres rayas para celu */
 .hamburger {
-  display: none; /* Oculto en PC */
+  display: none; /* en pc no se ve */
   background: none;
   border: none;
   cursor: pointer;
@@ -45,181 +63,705 @@ body {
   display: block;
   width: 25px;
   height: 3px;
-  background-color: #00ff99; /* Color neón */
+
+  background-color: #00ff99; /* color medio neon */
   margin: 5px 0;
+
   transition: 0.3s;
   border-radius: 2px;
 }
 
-/* enlaces del menu de navegacion */
+
+
+/* links del menu */
+/* contenedor del menu de navegacion: pone los links en linea y centrados */
 .nav-links {
   display: flex;
   align-items: center;
 }
 
+/* estilo general de cada link del menu */
 .nav-links a {
-  color: #ffffff;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: 500;
-  transition: 0.3s;
+  color: #ffffff;       /* color del texto */
+  text-decoration: none; /* saca el subrayado */
+  margin: 0 10px;        /* separacion entre cada link */
+  font-weight: 500;    /* grosor del texto */
+  transition: 0.3s;    /* suaviza el cambio de color */
 }
 
-.nav-links a:hover,
-.nav-links a.active { color: #00ff99; }
+
+.nav-links a:hover, .nav-links a.active {
+  color: #ffffff;    /* cambia el color para resaltar */
+}
 
 
-/* ... [TUS ESTILOS DEL HERO, BOTONES, ESFERAS, ETC. SE MANTIENEN IGUAL] ... */
-/* Copia aquí todo el CSS intermedio que tenías para #hero, info-box, etc. */
-/* Voy directo a la parte RESPONSIVE que es lo que cambia */
 
-/* seccion principal o portada */
+/* parte principal del inicio */
 #hero {
-  padding-top: 80px; 
-  height: 100vh; 
+  padding-top: 80px;
+  height: 100vh;
+
   box-sizing: border-box;
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
-  text-align: center; 
-  position: relative; 
-  overflow: hidden; 
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  position: relative;
+
+  overflow: hidden;
 }
 
+/* esto es para que no quede rara la altura si le cambias algo inline */
 section#hero[style*="height:80vh"] {
-    min-height: 80vh;
-    height: auto;
+  min-height: 80vh;
+  height: auto;
 }
 
-.hero-content h1 { font-size: 3em; color: #00ff99; text-shadow: 0 0 20px rgba(0,255,153,0.5); }
-.hero-content h2 { font-size: 1.6em; margin: 10px 0; opacity: 0.9; }
-.hero-content p { max-width: 600px; margin: 20px auto; line-height: 1.6; color: #ffffff; text-shadow: 0 0 8px rgba(0,255,153,0.5); }
 
+
+/* contenido del hero */
+.hero-content h1 {
+  font-size: 3em;
+  color: #00ff99;
+  text-shadow: 0 0 20px rgba(0,255,153,0.5);
+}
+
+.hero-content h2 {
+  font-size: 1.6em;
+  margin: 10px 0;
+  opacity: 0.9;
+}
+
+.hero-content p {
+  max-width: 600px;
+  margin: 20px auto;
+
+  line-height: 1.6;
+  color: #ffffff;
+
+  text-shadow: 0 0 8px rgba(0,255,153,0.5);
+}
+
+
+
+/* boton del idioma */
 .lang-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+
   color: white;
   padding: 5px 10px;
+
   margin-left: 15px;
   border-radius: 10px;
+
   cursor: pointer;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
+
   transition: 0.3s;
 }
-.lang-btn:hover { background: #00ff99; color: #0c0f0d; }
 
+.lang-btn:hover {
+  background: #00ff99;
+  color: #0c0f0d;
+}
+
+
+
+/* boton comun */
 .btn {
   display: inline-block;
+
   padding: 12px 25px;
   color: #0c0f0d;
+
   background: #00ff99;
   border-radius: 30px;
+
   text-decoration: none;
   font-weight: bold;
+
   transition: 0.3s;
   box-shadow: 0 0 15px #00ff99;
 }
-.btn:hover { transform: scale(1.1); box-shadow: 0 0 25px #00ff99; }
 
-.drone-image { display: flex; justify-content: center; margin-top: 20px; }
-.drone-image img { width: 350px; max-width: 90%; }
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #00ff99;
+}
 
-.floating-spheres { position: fixed; width: 100%; height: 100%; top: 0; left: 0; overflow: hidden; z-index: -1; pointer-events: none; }
-.sphere { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(0,255,153,0.25), transparent); filter: blur(3px); opacity: 0.3; transition: transform 2s ease, opacity 2s ease; }
-.sphere:nth-child(1){ width:220px; height:220px; top:8%; left:10%; }
-.sphere:nth-child(2){ width:180px; height:180px; top:20%; left:75%; }
-.sphere:nth-child(3){ width:130px; height:130px; top:55%; left:40%; }
-.sphere:nth-child(4){ width:160px; height:160px; top:70%; left:15%; }
-.sphere:nth-child(5){ width:200px; height:200px; top:85%; left:80%; }
-.sphere:nth-child(6){ width:140px; height:140px; top:35%; left:5%; }
-.sphere:nth-child(7){ width:180px; height:180px; top:10%; left:50%; }
 
-#info { display:flex; flex-wrap:wrap; justify-content:center; padding:100px 20px; background: linear-gradient(160deg, #0d1813, #0a100c); gap:20px; }
-.info-box { flex:1 1 300px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius:20px; padding:25px; text-align:center; box-shadow:0 0 15px rgba(0,255,153,0.1); transition:0.3s; }
-.info-box:hover { transform:translateY(-10px); box-shadow:0 0 25px oklch(87.916% 0.21339 155.977 / 0.3); }
-.info-box h3 { color: #00ff99; margin-bottom:10px; }
-.info-box p { font-size:1.05em; line-height:1.6; }
 
-#about { padding: 120px 20px 50px; text-align: center; }
-#about h2 { font-size: 2.5em; color: #00ff99; margin-bottom: 20px; }
-#about p { font-size: 1.1em; color: #ffffff; line-height: 1.6; max-width: 700px; margin: 10px auto; }
-#about .btn { margin-top: 20px; }
+/* imagen del dron*/
+.drone-image {
+  display: flex;                /* usa flex para manejar alineacion */
+  justify-content: center;      /* centra la imagen horizontal */
+  margin-top: 20px;             /* separacion desde arriba */
+}
 
-.drone-container { display: flex; justify-content: center; margin-top: 30px; }
-.drone-assemble { width: 300px; opacity: 1; clip-path: none; }
+/* ajustes de la imagen del dron */
+.drone-image img {
+  width: 350px;                 /* tamaño base de la imagen */
+  max-width: 90%;               /* evita que se pase del ancho en pantallas chicas */
+}
 
-#contact { padding: 120px 10% 80px; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; background: linear-gradient(160deg, #0d1813, #0a100c); }
-.contact-hero { text-align: center; margin-bottom: 50px; }
-.contact-hero h2 { font-size: 2.5em; color: #00ff99; margin-bottom: 10px; }
-.contact-hero p { font-size: 1.1em; color: #ffffff; max-width: 700px; line-height: 1.6; }
-.contact-container { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; width: 100%; max-width: 1000px; }
-.contact-form { flex: 1 1 400px; display: flex; flex-direction: column; gap: 15px; background: rgba(255,255,255,0.08); padding: 30px; border-radius: 20px; box-shadow: 0 0 15px rgba(0,255,153,0.1); }
-.contact-form label { font-weight: 500; color: #00ff99; }
-.contact-form input, .contact-form textarea { background: rgba(255,255,255,0.1); border: none; border-radius: 10px; padding: 10px; color: white; font-size: 1em; }
-.contact-form input:focus, .contact-form textarea:focus { outline: 2px solid #00ff99; }
-.contact-form .btn { align-self: center; margin-top: 10px; }
-.contact-info { flex: 1 1 250px; color: #fff; font-size: 0.95em; background: rgba(255,255,255,0.05); padding: 25px; border-radius: 20px; box-shadow: 0 0 15px rgba(0,255,153,0.1); }
-.contact-info p { margin-bottom: 20px; }
-.contact-info h3 { color: #00ff99; margin-bottom: 15px; }
-.contact-info a { color: #00ff99; text-decoration: none; }
-.social-icons { margin-top: 15px; }
-.social-icons img:hover { transform: scale(1.1); opacity: 1; }
 
-#valores, #ventajas { background: linear-gradient(160deg, #0d1813, #0a100c); padding: 80px 10%; text-align: center; border-top: 1px solid rgba(0,255,153,0.2); }
-#valores h3, #ventajas h3 { font-size: 2.2em; color: #00ff99; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 40px; text-shadow: 0 0 15px rgba(0,255,153,0.5); }
-.values-list { list-style: none; padding: 0; max-width: 800px; margin: 0 auto; text-align: left; }
-.values-list li { background: rgba(255,255,255,0.05); border-left: 4px solid #00ff99; margin-bottom: 15px; padding: 18px 25px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,255,153,0.1); transition: 0.3s ease; }
-.values-list li:hover { transform: translateX(5px); box-shadow: 0 0 20px rgba(0,255,153,0.3); }
-.values-list strong { color: #00ff99; }
-.advantages { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; margin-top: 40px; }
-.adv-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(0,255,153,0.2); border-radius: 20px; padding: 25px; box-shadow: 0 0 15px rgba(0,255,153,0.1); transition: 0.3s ease; }
-.adv-card:hover { transform: translateY(-10px); box-shadow: 0 0 25px rgba(0,255,153,0.3); }
-.adv-card h4 { color: #00ff99; font-size: 1.2rem; margin-bottom: 10px; text-shadow: 0 0 10px rgba(0,255,153,0.4); }
-.adv-card p { color: #ffffff; font-size: 0.95rem; line-height: 1.6; }
-#ventajas .btn { margin-top: 40px; background: #00ff99; color: #0c0f0d; box-shadow: 0 0 15px #00ff99; font-weight: bold; }
-#ventajas .btn:hover { transform: scale(1.1); box-shadow: 0 0 25px #00ff99; }
 
-#mision, #impacto, #aliados { background: linear-gradient(160deg, #0d1813, #0a100c); padding: 100px 10%; text-align: center; border-top: 1px solid rgba(0,255,153,0.15); }
-#mision h2, #impacto h2, #aliados h2 { font-size: 2.4em; color: #00ff99; text-transform: uppercase; margin-bottom: 25px; text-shadow: 0 0 15px rgba(0,255,153,0.4); letter-spacing: 1px; }
-#mision p, #impacto p, #aliados p { font-size: 1.1em; line-height: 1.7; max-width: 800px; margin: 0 auto 40px; color: #ffffff; opacity: 0.9; }
-.impact-img img { width: 100%; max-width: 700px; border-radius: 20px; box-shadow: 0 0 25px rgba(0,255,153,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.impact-img img:hover { transform: scale(1.03); box-shadow: 0 0 35px rgba(0,255,153,0.4); }
-.aliados-container { display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap; }
-.aliado img { width: 160px; opacity: 0.85; transition: transform 0.3s ease, opacity 0.3s ease; filter: drop-shadow(0 0 10px rgba(0,255,153,0.3)); }
-.aliado img:hover { transform: scale(1.1); opacity: 1; filter: drop-shadow(0 0 20px rgba(0,255,153,0.6)); }
+/* animacion de las esferas de fondo */
+.floating-spheres {
+  position: fixed;              /* queda fija aunque se haga scroll */
+  width: 100%;                  /* ocupa todo el ancho */
+  height: 100%;                 /* ocupa todo el alto */
+  top: 0;                       /* pegada arriba */
+  left: 0;                      /* pegada a la izquierda */
+  overflow: hidden;             /* esconde partes que se salgan del cuadro */
+  z-index: -1;                  /* queda detras de todo el contenido */
+  pointer-events: none;         /* no bloquea clics ni interacciones */
+}
 
-.gallery-drones { display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 40px; flex-wrap: wrap; }
-.gallery-item { width: 320px; height: auto; border-radius: 20px; transition: transform 0.3s ease, filter 0.3s ease; box-shadow: 0 0 25px rgba(0,255,153,0.2); }
-.gallery-item:hover { transform: scale(1.05); filter: brightness(1.2); }
+/* estilo de cada esfera individual */
+.sphere {
+  position: absolute;           /* permite poner cada esfera en cualquier lugar */
+  border-radius: 50%;           /* forma circular */
+  background: radial-gradient(
+    circle,
+    rgba(0,255,153,0.25),
+    transparent
+  );                            /* color verde suave que se desvanece */
+  filter: blur(3px);            /* efecto difuminado */
+  opacity: 0.3;                 /* hace las esferas mas suaves */
+  transition: transform 2s ease, opacity 2s ease; /* animacion suave del movimiento y opacidad */
+}
 
+
+/* las esferas en distintos lugares */
+.sphere:nth-child(1){ 
+  width:220px;
+  height:220px;
+  top:8%;
+  left:10%;
+  }
+.sphere:nth-child(2){ 
+  width:180px;
+  height:180px;
+  top:20%;
+  left:75%; 
+  }
+.sphere:nth-child(3){ 
+  width:130px;
+  height:130px;
+  top:55%;
+  left:40%; 
+  }
+.sphere:nth-child(4){ 
+  width:160px;
+  height:160px;
+  top:70%;
+  left:15%; 
+  }
+.sphere:nth-child(5){ 
+  width:200px;
+  height:200px; 
+  top:85%;
+  left:80%; 
+  }
+.sphere:nth-child(6){
+  width:140px;
+  height:140px;
+  top:35%; 
+  left:5%;
+   }
+.sphere:nth-child(7){ 
+  width:180px;
+  height:180px;
+  top:10%; 
+  left:50%; 
+  }
+
+
+
+/* seccion info con las tarjetas */
+#info {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  padding: 100px 20px;
+
+  background: linear-gradient(160deg, #0d1813, #0a100c);
+
+  gap: 20px;
+}
+
+.info-box {
+  flex: 1 1 300px;
+
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+
+  border-radius: 20px;
+  padding: 25px;
+
+  text-align: center;
+
+  box-shadow: 0 0 15px rgba(0,255,153,0.1);
+  transition: 0.3s;
+}
+
+.info-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px oklch(87.916% 0.21339 155.977 / 0.3);
+}
+
+.info-box h3 {
+  color: #00ff99;
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+
+
+/* seccion sobre nosotros */
+#about {
+  padding: 120px 20px 50px;
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 2.5em;
+  color: #00ff99;
+
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 1.1em;
+  color: #ffffff;
+
+  line-height: 1.6;
+  max-width: 700px;
+
+  margin: 10px auto;
+}
+
+#about .btn {
+  margin-top: 20px;
+}
+
+
+
+/* dron flotando */
+
+.drone-container {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 30px;
+}
+
+.drone-assemble {
+  width: 300px;
+  opacity: 1;
+  clip-path: none;
+}
+
+
+
+/* seccion contacto */
+#contact {
+  padding: 120px 10% 80px;
+
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: linear-gradient(160deg, #0d1813, #0a100c);
+}
+
+.contact-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-hero h2 {
+  font-size: 2.5em;
+  color: #00ff99;
+
+  margin-bottom: 10px;
+}
+
+.contact-hero p {
+  font-size: 1.1em;
+  color: #ffffff;
+
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+
+
+/* contenedor de formulario + info */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap; /* permite que bajen a otra fila si no entra todo */
+  gap: 40px; /* espacio entre los bloques */
+
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+
+
+/* formulario */
+.contact-form {
+  flex: 1 1 400px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  background: rgba(255,255,255,0.08);
+
+  padding: 30px;
+  border-radius: 20px;
+
+  box-shadow: 0 0 15px rgba(0,255,153,0.1);
+}
+
+.contact-form label {
+  font-weight: 500;
+  color: #00ff99;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255,255,255,0.1);
+  border: none;
+
+  border-radius: 10px;
+  padding: 10px;
+
+  color: white;
+  font-size: 1em;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #00ff99;
+}
+
+.contact-form .btn {
+  align-self: center;
+  margin-top: 10px;
+}
+
+
+
+/* informacion de contacto */
+.contact-info {
+  flex: 1 1 250px;
+  color: #fff;
+
+  font-size: 0.95em;
+  background: rgba(255,255,255,0.05);
+
+  padding: 25px;
+  border-radius: 20px;
+
+  box-shadow: 0 0 15px rgba(0,255,153,0.1);
+}
+
+.contact-info p {
+  margin-bottom: 20px;
+}
+
+.contact-info h3 {
+  color: #00ff99;
+  margin-bottom: 15px;
+}
+
+.contact-info a {
+  color: #00ff99;
+  text-decoration: none;
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+
+
+/* secciones valores y ventajas */
+#valores,
+#ventajas {
+  background: linear-gradient(160deg, #0d1813, #0a100c);
+  padding: 80px 10%;
+
+  text-align: center;
+  border-top: 1px solid rgba(0,255,153,0.2);
+}
+
+#valores h3,
+#ventajas h3 {
+  font-size: 2.2em;
+  color: #00ff99;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  margin-bottom: 40px;
+  text-shadow: 0 0 15px rgba(0,255,153,0.5);
+}
+
+
+
+/* lista de valores */
+.values-list {
+  list-style: none;
+  padding: 0;
+
+  max-width: 800px;
+  margin: 0 auto;
+
+  text-align: left;
+}
+
+.values-list li {
+  background: rgba(255,255,255,0.05);
+
+  border-left: 4px solid #00ff99;
+  margin-bottom: 15px;
+
+  padding: 18px 25px;
+  border-radius: 12px;
+
+  box-shadow: 0 0 10px rgba(0,255,153,0.1);
+
+  transition: 0.3s ease;
+}
+
+.values-list li:hover {
+  transform: translateX(5px); /* mueve el item un poco a la derecha */
+  box-shadow: 0 0 20px rgba(0,255,153,0.3);
+}
+
+.values-list strong {
+  color: #00ff99;
+}
+
+
+
+/* tarjetas de ventajas */
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+  gap: 25px;  /* espacio entre las tarjetas */
+  margin-top: 40px;
+}
+
+.adv-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(0,255,153,0.2);
+
+  border-radius: 20px;
+  padding: 25px;
+
+  box-shadow: 0 0 15px rgba(0,255,153,0.1);
+  transition: 0.3s ease;
+}
+
+.adv-card:hover {
+  transform: translateY(-10px); /* mueve el item un poco hacia arriba */
+  box-shadow: 0 0 25px rgba(0,255,153,0.3);
+}
+
+.adv-card h4 {
+  color: #00ff99;
+  font-size: 1.2rem;
+
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(0,255,153,0.4);
+}
+
+.adv-card p {
+  color: #ffffff;
+  font-size: 0.95rem;
+
+  line-height: 1.6;
+}
+
+#ventajas .btn {
+  margin-top: 40px;
+  background: #00ff99;
+
+  color: #0c0f0d;
+  box-shadow: 0 0 15px #00ff99;
+
+  font-weight: bold;
+}
+
+#ventajas .btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #00ff99;
+}
+
+
+
+/* secciones mision impacto aliados */
+#mision,
+#impacto,
+#aliados {
+  background: linear-gradient(160deg, #0d1813, #0a100c);
+  padding: 100px 10%;
+
+  text-align: center;
+  border-top: 1px solid rgba(0,255,153,0.15);
+}
+
+#mision h2,
+#impacto h2,
+#aliados h2 {
+  font-size: 2.4em;
+  color: #00ff99;
+
+  text-transform: uppercase;
+  margin-bottom: 25px;
+
+  text-shadow: 0 0 15px rgba(0,255,153,0.4);
+  letter-spacing: 1px;
+}
+
+#mision p,
+#impacto p,
+#aliados p {
+  font-size: 1.1em;
+  line-height: 1.7;
+
+  max-width: 800px;
+  margin: 0 auto 40px;
+
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+
+
+/* imagen grande */
+.impact-img img {
+  width: 100%;
+  max-width: 700px;
+
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0,255,153,0.2);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.impact-img img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 35px rgba(0,255,153,0.4);
+}
+
+
+
+/* aliados logos */
+.aliados-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.aliado img {
+  width: 160px;
+  opacity: 0.85;
+
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(0,255,153,0.3));
+}
+
+.aliado img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+  filter: drop-shadow(0 0 20px rgba(0,255,153,0.6));
+}
+
+
+
+/* galeria dron */
+.gallery-drones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 40px;
+  margin-top: 40px;
+
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  width: 320px;
+  height: auto;
+
+  border-radius: 20px;
+
+  transition: transform 0.3s ease, filter 0.3s ease;
+  box-shadow: 0 0 25px rgba(0,255,153,0.2);
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
 
 
 @media(max-width: 900px) {
-  
-  /* mostrar el boton hamburguesa */
+
+  /* muestro el menu hamburguesa en pantallas chicas */
   .hamburger {
     display: block;
   }
 
-  /* OCULTAR el menú por defecto en celular */
+  /* oculto el menu y lo cambio a columna para modo movil */
   .nav-links {
-    display: none; 
+    display: none;
     width: 100%;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    background: rgba(12, 15, 13, 0.95); /* fondo oscuro para que se lea */
+    background: rgba(12, 15, 13, 0.95);
     padding: 20px;
     border-radius: 10px;
     border: 1px solid rgba(0,255,153,0.2);
   }
 
+  /* cuando el menu esta activo lo muestro */
   .nav-links.active {
     display: flex;
   }
 
+  /* ajusto los enlaces para que ocupen todo el ancho y queden centrados */
   .nav-links a {
     margin: 10px 0;
     font-size: 1.2em;
@@ -229,46 +771,128 @@ section#hero[style*="height:80vh"] {
     border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 
+  /* acomodo el boton de idioma para que quede centrado */
   .lang-btn {
     margin: 20px 0 0 0;
     width: 100%;
     text-align: center;
   }
 
-  /* padding normal porque el menu ya no ocupa tanto espacio al estar oculto */
-  #hero, #about, #contact {
-     padding-top: 80px; 
+  /* agrego espacio arriba de las secciones para que no las tape el menu */
+  #hero,
+  #about,
+  #contact {
+    padding-top: 80px;
   }
 
-  #hero { height: auto; min-height: 100vh; }
-  
+  /* hago que el hero se adapte en altura en pantallas chicas */
+  #hero {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* corrijo el hero si tiene una altura fija puesta en linea */
   section#hero[style*="height:80vh"] {
-      height: auto !important;
-      min-height: 80vh !important;
+    height: auto !important;
+    min-height: 80vh !important;
   }
-  
-  #info, #mision, #impacto, #aliados, #valores, #ventajas {
-      padding: 60px 5%;
+
+  /* reduzco el padding de varias secciones para moviles */
+  #info,
+  #mision,
+  #impacto,
+  #aliados,
+  #valores,
+  #ventajas {
+    padding: 60px 5%;
   }
-  
-  #contact { padding: 80px 5% 60px 5%; }
+
+  /* padding especial para la seccion de contacto en celular */
+  #contact {
+    padding: 80px 5% 60px 5%;
+  }
 }
 
-@media(max-width:600px){
-  .hero-content h1{font-size: 2.5em;}
-  .hero-content h2{font-size: 1.3em;}
-  .hero-content p { font-size: 1em; line-height: 1.5; }
-  .info-box{flex:1 1 100%;}
-  .drone-image img{width:200px;}
-  .drone-assemble { width: 200px; }
-  #mision h2, #impacto h2, #aliados h2, #valores h3, #ventajas h3 { font-size: 1.8em; }
-  #mision p, #impacto p, #aliados p, #about p, .contact-hero p { font-size: 1em; }
-  .adv-card { padding: 20px; }
-  .adv-card h4 { font-size: 1.1rem; }
-  .adv-card p { font-size: 0.9rem; }
+
+
+/* estilos para pantallas muy chicas tipo celular */
+@media(max-width: 600px) {
+
+  /* achico los titulos del hero */
+  .hero-content h1 {
+    font-size: 2.5em;
+  }
+
+  .hero-content h2 {
+    font-size: 1.3em;
+  }
+
+  /* se reduce el tamaño del parrafo para mejor lectura */
+  .hero-content p {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+
+  /* hago que cada caja ocupe toda la fila */
+  .info-box {
+    flex: 1 1 100%;
+  }
+
+  /* se achica la imagen del dron para que entre en pantalla */
+  .drone-image img {
+    width: 200px;
+  }
+
+  .drone-assemble {
+    width: 200px;
+  }
+
+  /* se reduce el tamaño de los titulos de las secciones */
+  #mision h2,
+  #impacto h2,
+  #aliados h2,
+  #valores h3,
+  #ventajas h3 {
+    font-size: 1.8em;
+  }
+
+  
+  #mision p,
+  #impacto p,
+  #aliados p,
+  #about p,
+  .contact-hero p {
+    font-size: 1em;
+  }
+
+
+  .adv-card {
+    padding: 20px;
+  }
+
+  .adv-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .adv-card p {
+    font-size: 0.9rem;
+  }
 }
 
-@media(max-width:700px) {
-  .contact-container { flex-direction: column; align-items: center; }
-  .contact-info, .contact-form { width: 100%; }
+
+
+/* ajustes para pantallas medianas tipo tablets */
+@media(max-width: 700px) {
+
+  /* junto la info de contacto en columna */
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* para que cada bloque ocupe todo el ancho en vertical */
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
 }
