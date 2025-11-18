@@ -1,120 +1,114 @@
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* saca espacios externos */
+  padding: 0; /* saca espacios internos */
+  box-sizing: border-box; /* hace que el tamaño sea más fácil de controlar */
 }
 
 
 
-/* estilo general de la pagina tipo fondo oscuro futurista */
+
 body {
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(145deg, #0c0f0d, #0f1f17);
-  color: #ffffff;
-  overflow-x: hidden;
-  min-height: 100vh;
+  font-family: "Poppins", sans-serif; /* tipo de letra */
+  background: linear-gradient(145deg, #0c0f0d, #0f1f17); /* fondo oscuro con degradado */
+  color: #ffffff; /* texto en blanco */
+  overflow-x: hidden; /* evita scroll horizontal */
+  min-height: 100vh; /* ocupa toda la altura de la pantalla */
 }
 
 
 
-/* barra de arriba que siempre queda fija */
 .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; /* organiza elementos en fila */
+  justify-content: space-between; /* separa izquierda y derecha */
+  align-items: center; /* centra verticalmente */
 
-  padding: 15px 5%;
-  background: rgba(255,255,255,0.05);
+  padding: 15px 5%; /* espacio interno */
+  background: rgba(255,255,255,0.05); /* color transparente tipo vidrio */
 
-  position: fixed;
-  width: 100%;
-  top: 0;
+  position: fixed; /* queda arriba aunque se haga scroll */
+  width: 100%; /* ocupa todo el ancho */
+  top: 0; /* pegado arriba */
 
-  z-index: 1000; /* esto lo puse alto para que no quede abajo */
-  flex-wrap: wrap; /* asi se rompe en varias lineas en celu */
+  z-index: 1000; /* queda encima de todo */
+  flex-wrap: wrap; /* se acomoda en varias líneas en pantallas chicas */
 }
 
 
 
-/* logos del header */
+
 .logo {
-  height: 45px;
+  height: 45px; /* tamaño del logo grande */
 }
 
 .logo-small {
-  height: 35px;
-  opacity: 0.8;
-  margin-left: 8px;
+  height: 35px; /* tamaño del logo chico */
+  opacity: 0.8; /* un poco transparente */
+  margin-left: 8px; /* espacio a la izquierda */
 }
 
 
 
-/* las tres rayas para celu */
 .hamburger {
-  display: none; /* en pc no se ve */
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
+  display: none; /* oculto en PC */
+  background: none; /* sin fondo */
+  border: none; /* sin borde */
+  cursor: pointer; /* cursor de clic */
+  padding: 10px; /* espacio interno */
 }
 
 .hamburger span {
-  display: block;
-  width: 25px;
-  height: 3px;
+  display: block; /* cada raya ocupa una línea */
+  width: 25px; /* ancho de la raya */
+  height: 3px; /* grosor */
 
-  background-color: #00ff99; /* color medio neon */
-  margin: 5px 0;
+  background-color: #00ff99; /* color verde neon */
+  margin: 5px 0; /* separación entre rayas */
 
-  transition: 0.3s;
-  border-radius: 2px;
+  transition: 0.3s; /* animación suave */
+  border-radius: 2px; /* bordes redondeados */
 }
 
 
 
-/* links del menu */
-/* contenedor del menu de navegacion: pone los links en linea y centrados */
 .nav-links {
-  display: flex;
-  align-items: center;
+  display: flex; /* pone los links en fila */
+  align-items: center; /* los centra verticalmente */
 }
 
-/* estilo general de cada link del menu */
+
 .nav-links a {
-  color: #ffffff;       /* color del texto */
-  text-decoration: none; /* saca el subrayado */
-  margin: 0 10px;        /* separacion entre cada link */
-  font-weight: 500;    /* grosor del texto */
-  transition: 0.3s;    /* suaviza el cambio de color */
+  color: #ffffff; /* texto blanco */
+  text-decoration: none; /* sin subrayado */
+  margin: 0 10px; /* espacio entre links */
+  font-weight: 500; /* grosor del texto */
+  transition: 0.3s; /* animación suave */
 }
 
-
+/* Cuando pasa el mouse o está activo */
 .nav-links a:hover, .nav-links a.active {
-  color: #ffffff;    /* cambia el color para resaltar */
+  color: #ffffff; /* mantiene color pero resalta */
 }
 
 
 
-/* parte principal del inicio */
 #hero {
-  padding-top: 80px;
-  height: 100vh;
+  padding-top: 80px; /* deja espacio por la barra fija */
+  height: 100vh; /* ocupa toda la pantalla */
 
   box-sizing: border-box;
-  display: flex;
+  display: flex; /* centra el contenido */
 
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column; /* elementos uno arriba del otro */
+  align-items: center; /* centrado horizontal */
+  justify-content: center; /* centrado vertical */
 
-  text-align: center;
+  text-align: center; /* texto centrado */
   position: relative;
-
-  overflow: hidden;
+  overflow: hidden; /* evita scroll raro */
 }
 
-/* esto es para que no quede rara la altura si le cambias algo inline */
+/* Ajuste por si le cambian altura inline */
 section#hero[style*="height:80vh"] {
   min-height: 80vh;
   height: auto;
@@ -122,91 +116,79 @@ section#hero[style*="height:80vh"] {
 
 
 
-/* contenido del hero */
 .hero-content h1 {
-  font-size: 3em;
-  color: #00ff99;
-  text-shadow: 0 0 20px rgba(0,255,153,0.5);
+  font-size: 3em; /* título grande */
+  color: #00ff99; /* verde neon */
+  text-shadow: 0 0 20px rgba(0,255,153,0.5); /* brillo verde */
 }
 
 .hero-content h2 {
-  font-size: 1.6em;
-  margin: 10px 0;
-  opacity: 0.9;
+  font-size: 1.6em; /* subtítulo */
+  margin: 10px 0; /* espacio arriba y abajo */
+  opacity: 0.9; /* un poco transparente */
 }
 
 .hero-content p {
-  max-width: 600px;
-  margin: 20px auto;
-
-  line-height: 1.6;
+  max-width: 600px; /* ancho máximo del texto */
+  margin: 20px auto; /* lo centra */
+  line-height: 1.6; /* separación entre líneas */
   color: #ffffff;
-
-  text-shadow: 0 0 8px rgba(0,255,153,0.5);
+  text-shadow: 0 0 8px rgba(0,255,153,0.5); /* brillo suave */
 }
 
 
 
-/* boton del idioma */
+
 .lang-btn {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-
-  color: white;
-  padding: 5px 10px;
-
-  margin-left: 15px;
-  border-radius: 10px;
-
-  cursor: pointer;
+  background: rgba(255,255,255,0.1); /* fondo transparente claro */
+  border: 1px solid rgba(255,255,255,0.2); /* borde suave */
+  color: white; /* texto blanco */
+  padding: 5px 10px; /* espacio interno */
+  margin-left: 15px; /* separación */
+  border-radius: 10px; /* bordes redondeados */
+  cursor: pointer; /* cursor de clic */
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-
-  transition: 0.3s;
+  transition: 0.3s; /* animación */
 }
 
 .lang-btn:hover {
-  background: #00ff99;
-  color: #0c0f0d;
+  background: #00ff99; /* se vuelve verde al pasar */
+  color: #0c0f0d; /* texto oscuro */
 }
 
 
 
-/* boton comun */
+/* BOToN GENERAL  */
 .btn {
-  display: inline-block;
-
-  padding: 12px 25px;
-  color: #0c0f0d;
-
-  background: #00ff99;
-  border-radius: 30px;
-
-  text-decoration: none;
+  display: inline-block; /* permite padding correcto */
+  padding: 12px 25px; /* tamaño del botón */
+  color: #0c0f0d; /* texto oscuro */
+  background: #00ff99; /* color verde */
+  border-radius: 30px; /* forma ovalada */
+  text-decoration: none; /* sin subrayado */
   font-weight: bold;
-
   transition: 0.3s;
-  box-shadow: 0 0 15px #00ff99;
+  box-shadow: 0 0 15px #00ff99; /* brillo */
 }
 
 .btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px #00ff99;
+  transform: scale(1.1); /* se agranda */
+  box-shadow: 0 0 25px #00ff99; /* más brillo */
 }
 
 
 
-/* imagen del dron*/
+/* IMAGEN DEL DRON */
 .drone-image {
-  display: flex;                /* usa flex para manejar alineacion */
-  justify-content: center;      /* centra la imagen horizontal */
-  margin-top: 20px;             /* separacion desde arriba */
+  display: flex; /* permite centrar */
+  justify-content: center; /* la imagen queda centrada */
+  margin-top: 20px; /* separación arriba */
 }
 
-/* ajustes de la imagen del dron */
 .drone-image img {
-  width: 350px;                 /* tamaño base de la imagen */
-  max-width: 90%;               /* evita que se pase del ancho en pantallas chicas */
+  width: 350px; /* tamaño base */
+  max-width: 90%; /* nunca se sale del ancho del celu */
 }
 
 
@@ -238,7 +220,7 @@ section#hero[style*="height:80vh"] {
 }
 
 
-/* las esferas en distintos lugares */
+/* las esferas en distintos lugares, tamaño*/
 .sphere:nth-child(1){ 
   width:220px;
   height:220px;
@@ -286,74 +268,86 @@ section#hero[style*="height:80vh"] {
 
 /* seccion info con las tarjetas */
 #info {
-  display: flex;
-  flex-wrap: wrap;
-
-  justify-content: center;
-  padding: 100px 20px;
-
-  background: linear-gradient(160deg, #0d1813, #0a100c);
-
-  gap: 20px;
+  display: flex; /* pone las tarjetas en fila */
+  flex-wrap: wrap; /* si no entran, bajan */
+  justify-content: center; /* centra las tarjetas */
+  padding: 100px 20px; /* espacio */
+  background: linear-gradient(160deg, #0d1813, #0a100c); /* fondo oscuro */
+  gap: 20px; /* espacio entre tarjetas */
 }
 
 .info-box {
-  flex: 1 1 300px;
-
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-
-  border-radius: 20px;
-  padding: 25px;
-
-  text-align: center;
-
-  box-shadow: 0 0 15px rgba(0,255,153,0.1);
+  flex: 1 1 300px; /* todas miden al menos 300px */
+  background: rgba(255,255,255,0.1); /* fondo transparente */
+  border: 1px solid rgba(255,255,255,0.2); /* borde suave */
+  border-radius: 20px; /* redondeado */
+  padding: 25px; /* espacio interno */
+  text-align: center; /* texto centrado */
+  box-shadow: 0 0 15px rgba(0,255,153,0.1); /* brillo suave */
   transition: 0.3s;
 }
 
 .info-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px oklch(87.916% 0.21339 155.977 / 0.3);
+  transform: translateY(-10px); /* sube un poco */
+  box-shadow: 0 0 25px rgba(0,255,153,0.3); /* más brillo */
 }
 
 .info-box h3 {
-  color: #00ff99;
-  margin-bottom: 10px;
+  color: #00ff99; /* título verde */
+  margin-bottom: 10px; /* espacio */
 }
 
 .info-box p {
-  font-size: 1.05em;
-  line-height: 1.6;
+  font-size: 1.05em; /* tamaño del texto */
+  line-height: 1.6; /* separación entre líneas */
 }
-
-
 
 /* seccion sobre nosotros */
 #about {
-  padding: 120px 20px 50px;
-  text-align: center;
+  padding: 120px 20px 50px; /* agrega espacio arriba, a los costados y abajo */
+  text-align: center; /* centra el texto */
 }
 
 #about h2 {
-  font-size: 2.5em;
-  color: #00ff99;
+  font-size: 2.5em; /* tamaño grande del título */
+  color: #00ff99; /* color verde brillante */
 
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* espacio debajo del título */
 }
 
+/* Iconos de redes en contacto */
+.contact-social {
+  margin-top: 15px;
+}
+
+.social-icon {
+  width: 35px;
+  height: 35px;
+  margin-top: 5px;
+  cursor: pointer;
+
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+}
+
+.social-icon:hover {
+  transform: scale(1.15);
+
+}
+
+
 #about p {
-  font-size: 1.1em;
-  color: #ffffff;
+  font-size: 1.1em; /* agranda un poco el texto */
+  color: #ffffff; /* texto blanco */
 
-  line-height: 1.6;
-  max-width: 700px;
+  line-height: 1.6; /* espacio entre líneas más cómodo */
+  max-width: 700px; /* ancho máximo del párrafo */
 
-  margin: 10px auto;
+  margin: 10px auto; /* separa y centra el párrafo */
 }
 
 #about .btn {
-  margin-top: 20px;
+  margin-top: 20px; /* espacio arriba del botón */
 }
 
 
@@ -361,149 +355,149 @@ section#hero[style*="height:80vh"] {
 /* dron flotando */
 
 .drone-container {
-  display: flex;
-  justify-content: center;
+  display: flex; /* activa modo flex para centrar */
+  justify-content: center; /* centra el dron */
 
-  margin-top: 30px;
+  margin-top: 30px; /* espacio arriba del contenedor */
 }
 
 .drone-assemble {
-  width: 300px;
-  opacity: 1;
-  clip-path: none;
+  width: 300px; /* tamaño de la imagen */
+  opacity: 1; /* visible */
+  clip-path: none; /* sin recorte */
 }
 
 
 
 /* seccion contacto */
 #contact {
-  padding: 120px 10% 80px;
+  padding: 120px 10% 80px; /* espacio arriba, costados y abajo */
 
-  min-height: 100vh;
-  box-sizing: border-box;
+  min-height: 100vh; /* ocupa toda la pantalla */
+  box-sizing: border-box; /* incluye padding dentro del tamaño total */
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex; /* usa flexbox */
+  flex-direction: column; /* organiza el contenido de arriba a abajo */
+  align-items: center; /* centra horizontalmente */
 
-  background: linear-gradient(160deg, #0d1813, #0a100c);
+  background: linear-gradient(160deg, #0d1813, #0a100c); /* fondo con degradado oscuro */
 }
 
 .contact-hero {
-  text-align: center;
-  margin-bottom: 50px;
+  text-align: center; /* centra la sección */
+  margin-bottom: 50px; /* espacio inferior */
 }
 
 .contact-hero h2 {
-  font-size: 2.5em;
-  color: #00ff99;
+  font-size: 2.5em; /* título grande */
+  color: #00ff99; /* color verde */
 
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* espacio debajo del título */
 }
 
 .contact-hero p {
-  font-size: 1.1em;
-  color: #ffffff;
+  font-size: 1.1em; /* texto un poco más grande */
+  color: #ffffff; /* texto blanco */
 
-  max-width: 700px;
-  line-height: 1.6;
+  max-width: 700px; /* ancho máximo del párrafo */
+  line-height: 1.6; /* espacio entre líneas */
 }
 
 
 
 /* contenedor de formulario + info */
 .contact-container {
-  display: flex;
-  flex-wrap: wrap; /* permite que bajen a otra fila si no entra todo */
+  display: flex; /* organiza en filas */
+  flex-wrap: wrap; /* permite que salten a otra fila si no entran */
   gap: 40px; /* espacio entre los bloques */
 
-  justify-content: center;
-  width: 100%;
-  max-width: 1000px;
+  justify-content: center; /* centra el contenido */
+  width: 100%; /* ocupa todo el ancho */
+  max-width: 1000px; /* ancho máximo de la sección */
 }
 
 
 
 /* formulario */
 .contact-form {
-  flex: 1 1 400px;
+  flex: 1 1 400px; /* se adapta, mínimo 400px */
 
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  display: flex; /* usa flexbox */
+  flex-direction: column; /* coloca los elementos en columna */
+  gap: 15px; /* espacio entre inputs */
 
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.08); /* fondo blanco muy transparente */
 
-  padding: 30px;
-  border-radius: 20px;
+  padding: 30px; /* espacio interno */
+  border-radius: 20px; /* esquinas redondeadas */
 
-  box-shadow: 0 0 15px rgba(0,255,153,0.1);
+  box-shadow: 0 0 15px rgba(0,255,153,0.1); /* sombra suave verde */
 }
 
 .contact-form label {
-  font-weight: 500;
-  color: #00ff99;
+  font-weight: 500; /* texto un poco más grueso */
+  color: #00ff99; /* color verde */
 }
 
 .contact-form input,
 .contact-form textarea {
-  background: rgba(255,255,255,0.1);
-  border: none;
+  background: rgba(255,255,255,0.1); /* fondo semitransparente */
+  border: none; /* sin borde */
 
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 10px; /* bordes redondeados */
+  padding: 10px; /* espacio interno del campo */
 
-  color: white;
-  font-size: 1em;
+  color: white; /* texto blanco */
+  font-size: 1em; /* tamaño estándar */
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  outline: 2px solid #00ff99;
+  outline: 2px solid #00ff99; /* borde verde al seleccionar */
 }
 
 .contact-form .btn {
-  align-self: center;
-  margin-top: 10px;
+  align-self: center; /* centra el botón */
+  margin-top: 10px; /* espacio arriba */
 }
 
 
 
 /* informacion de contacto */
 .contact-info {
-  flex: 1 1 250px;
-  color: #fff;
+  flex: 1 1 250px; /* se adapta, mínimo 250px */
+  color: #fff; /* texto blanco */
 
-  font-size: 0.95em;
-  background: rgba(255,255,255,0.05);
+  font-size: 0.95em; /* tamaño un poco menor */
+  background: rgba(255,255,255,0.05); /* fondo transparente */
 
-  padding: 25px;
-  border-radius: 20px;
+  padding: 25px; /* espacio interno */
+  border-radius: 20px; /* esquinas redondeadas */
 
-  box-shadow: 0 0 15px rgba(0,255,153,0.1);
+  box-shadow: 0 0 15px rgba(0,255,153,0.1); /* sombra suave */
 }
 
 .contact-info p {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* separa los párrafos */
 }
 
 .contact-info h3 {
-  color: #00ff99;
-  margin-bottom: 15px;
+  color: #00ff99; /* título verde */
+  margin-bottom: 15px; /* espacio debajo del título */
 }
 
 .contact-info a {
-  color: #00ff99;
-  text-decoration: none;
+  color: #00ff99; /* color verde */
+  text-decoration: none; /* sin subrayado */
 }
 
 .social-icons {
-  margin-top: 15px;
+  margin-top: 15px; /* espacio arriba de los iconos */
 }
 
 .social-icons img:hover {
-  transform: scale(1.1);
-  opacity: 1;
+  transform: scale(1.1); /* agranda un poquito */
+  opacity: 1; /* más visible */
 }
 
 
@@ -511,363 +505,331 @@ section#hero[style*="height:80vh"] {
 /* secciones valores y ventajas */
 #valores,
 #ventajas {
-  background: linear-gradient(160deg, #0d1813, #0a100c);
-  padding: 80px 10%;
+  background: linear-gradient(160deg, #0d1813, #0a100c); /* fondo oscuro */
+  padding: 80px 10%; /* espacio interno */
 
-  text-align: center;
-  border-top: 1px solid rgba(0,255,153,0.2);
+  text-align: center; /* centra el contenido */
+  border-top: 1px solid rgba(0,255,153,0.2); /* línea verde arriba */
 }
 
 #valores h3,
 #ventajas h3 {
-  font-size: 2.2em;
-  color: #00ff99;
+  font-size: 2.2em; /* título grande */
+  color: #00ff99; /* color verde */
 
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  text-transform: uppercase; /* todo en mayúsculas */
+  letter-spacing: 1px; /* separa un poco las letras */
 
-  margin-bottom: 40px;
-  text-shadow: 0 0 15px rgba(0,255,153,0.5);
+  margin-bottom: 40px; /* espacio debajo del título */
+  text-shadow: 0 0 15px rgba(0,255,153,0.5); /* brillo verde */
 }
 
 
 
 /* lista de valores */
 .values-list {
-  list-style: none;
-  padding: 0;
+  list-style: none; /* sin viñetas */
+  padding: 0; /* sin espacio interno */
 
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 800px; /* ancho máximo */
+  margin: 0 auto; /* centrado */
 
-  text-align: left;
+  text-align: left; /* texto alineado a la izquierda */
 }
 
 .values-list li {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.05); /* fondo transparente */
 
-  border-left: 4px solid #00ff99;
-  margin-bottom: 15px;
+  border-left: 4px solid #00ff99; /* línea verde al costado */
+  margin-bottom: 15px; /* separa los items */
 
-  padding: 18px 25px;
-  border-radius: 12px;
+  padding: 18px 25px; /* espacio interno */
+  border-radius: 12px; /* esquinas redondeadas */
 
-  box-shadow: 0 0 10px rgba(0,255,153,0.1);
+  box-shadow: 0 0 10px rgba(0,255,153,0.1); /* sombra suave */
 
-  transition: 0.3s ease;
+  transition: 0.3s ease; /* animación suave */
 }
 
 .values-list li:hover {
-  transform: translateX(5px); /* mueve el item un poco a la derecha */
-  box-shadow: 0 0 20px rgba(0,255,153,0.3);
+  transform: translateX(5px); /* se mueve un poco a la derecha */
+  box-shadow: 0 0 20px rgba(0,255,153,0.3); /* sombra más fuerte */
 }
 
 .values-list strong {
-  color: #00ff99;
+  color: #00ff99; /* texto destacado en verde */
 }
 
 
 
 /* tarjetas de ventajas */
 .advantages {
-  display: grid;
+  display: grid; /* usa grid */
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  /* columnas que se adaptan solas */
 
-  gap: 25px;  /* espacio entre las tarjetas */
-  margin-top: 40px;
+  gap: 25px; /* espacio entre tarjetas */
+  margin-top: 40px; /* espacio superior */
 }
 
 .adv-card {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(0,255,153,0.2);
+  background: rgba(255,255,255,0.08); /* fondo transparente */
+  border: 1px solid rgba(0,255,153,0.2); /* borde verde suave */
 
-  border-radius: 20px;
-  padding: 25px;
+  border-radius: 20px; /* esquinas redondeadas */
+  padding: 25px; /* espacio interno */
 
-  box-shadow: 0 0 15px rgba(0,255,153,0.1);
-  transition: 0.3s ease;
+  box-shadow: 0 0 15px rgba(0,255,153,0.1); /* sombra verde */
+  transition: 0.3s ease; /* animación suave */
 }
 
 .adv-card:hover {
-  transform: translateY(-10px); /* mueve el item un poco hacia arriba */
-  box-shadow: 0 0 25px rgba(0,255,153,0.3);
+  transform: translateY(-10px); /* sube un poquito */
+  box-shadow: 0 0 25px rgba(0,255,153,0.3); /* sombra más fuerte */
 }
 
 .adv-card h4 {
-  color: #00ff99;
-  font-size: 1.2rem;
+  color: #00ff99; /* título verde */
+  font-size: 1.2rem; /* tamaño del título */
 
-  margin-bottom: 10px;
-  text-shadow: 0 0 10px rgba(0,255,153,0.4);
+  margin-bottom: 10px; /* espacio abajo */
+  text-shadow: 0 0 10px rgba(0,255,153,0.4); /* brillo verde */
 }
 
 .adv-card p {
-  color: #ffffff;
-  font-size: 0.95rem;
+  color: #ffffff; /* texto blanco */
+  font-size: 0.95rem; /* tamaño estándar */
 
-  line-height: 1.6;
+  line-height: 1.6; /* separación entre líneas */
 }
 
 #ventajas .btn {
-  margin-top: 40px;
-  background: #00ff99;
+  margin-top: 40px; /* espacio arriba */
+  background: #00ff99; /* verde fuerte */
 
-  color: #0c0f0d;
-  box-shadow: 0 0 15px #00ff99;
+  color: #0c0f0d; /* texto negro */
+  box-shadow: 0 0 15px #00ff99; /* brillo verde */
 
-  font-weight: bold;
+  font-weight: bold; /* texto más fuerte */
 }
 
 #ventajas .btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px #00ff99;
+  transform: scale(1.1); /* agranda */
+  box-shadow: 0 0 25px #00ff99; /* brillo más fuerte */
 }
-
 
 
 /* secciones mision impacto aliados */
 #mision,
 #impacto,
 #aliados {
-  background: linear-gradient(160deg, #0d1813, #0a100c);
-  padding: 100px 10%;
-
-  text-align: center;
-  border-top: 1px solid rgba(0,255,153,0.15);
+  background: linear-gradient(160deg, #0d1813, #0a100c); /* fondo oscuro con degradado */
+  padding: 100px 10%; /* espacio interno arriba/abajo y a los costados */
+  text-align: center; /* centra el texto */
+  border-top: 1px solid rgba(0,255,153,0.15); /* línea verde suave arriba */
 }
 
 #mision h2,
 #impacto h2,
 #aliados h2 {
-  font-size: 2.4em;
-  color: #00ff99;
-
-  text-transform: uppercase;
-  margin-bottom: 25px;
-
-  text-shadow: 0 0 15px rgba(0,255,153,0.4);
-  letter-spacing: 1px;
+  font-size: 2.4em; /* tamaño del título */
+  color: #00ff99; /* color verde */
+  text-transform: uppercase; /* todo en mayúsculas */
+  margin-bottom: 25px; /* espacio debajo del título */
+  text-shadow: 0 0 15px rgba(0,255,153,0.4); /* brillo verde */
+  letter-spacing: 1px; /* separación entre letras */
 }
 
 #mision p,
 #impacto p,
 #aliados p {
-  font-size: 1.1em;
-  line-height: 1.7;
-
-  max-width: 800px;
-  margin: 0 auto 40px;
-
-  color: #ffffff;
-  opacity: 0.9;
+  font-size: 1.1em; /* texto un poquito más grande */
+  line-height: 1.7; /* separa las líneas del párrafo */
+  max-width: 800px; /* ancho máximo del texto */
+  margin: 0 auto 40px; /* lo centra y agrega espacio abajo */
+  color: #ffffff; /* texto blanco */
+  opacity: 0.9; /* blanco un poco más suave */
 }
 
-
-
-/* imagen grande */
 .impact-img img {
-  width: 100%;
-  max-width: 700px;
-
-  border-radius: 20px;
-  box-shadow: 0 0 25px rgba(0,255,153,0.2);
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* ocupa todo el ancho posible */
+  max-width: 700px; /* pero no más de 700px */
+  border-radius: 20px; /* puntas redondeadas */
+  box-shadow: 0 0 25px rgba(0,255,153,0.2); /* sombra verde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* animación suave al pasar el mouse */
 }
 
 .impact-img img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 35px rgba(0,255,153,0.4);
+  transform: scale(1.03); /* agranda la imagen un poco */
+  box-shadow: 0 0 35px rgba(0,255,153,0.4); /* sombra más fuerte */
 }
 
+/*        ALIADOS / LOGOS          */
 
 
-/* aliados logos */
 .aliados-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  gap: 60px;
-  flex-wrap: wrap;
+  display: flex; /* usa flexbox */
+  justify-content: center; /* centra horizontal */
+  align-items: center; /* centra vertical */
+  gap: 60px; /* espacio entre logos */
+  flex-wrap: wrap; /* si no entran, bajan de línea */
 }
 
 .aliado img {
-  width: 160px;
-  opacity: 0.85;
-
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  filter: drop-shadow(0 0 10px rgba(0,255,153,0.3));
+  width: 160px; /* tamaño del logo */
+  opacity: 0.85; /* un poquito transparente */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* animación suave */
+  filter: drop-shadow(0 0 10px rgba(0,255,153,0.3)); /* sombra verde suave */
 }
 
 .aliado img:hover {
-  transform: scale(1.1);
-  opacity: 1;
-  filter: drop-shadow(0 0 20px rgba(0,255,153,0.6));
+  transform: scale(1.1); /* agranda */
+  opacity: 1; /* vuelve al 100% */
+  filter: drop-shadow(0 0 20px rgba(0,255,153,0.6)); /* sombra más fuerte */
 }
 
 
-
-/* galeria dron */
+/* drones  */
 .gallery-drones {
-  display: flex;
-  justify-content: center;
+  display: flex; /* acomoda en fila */
+  justify-content: center; /* centra horizontal */
   align-items: center;
-
-  gap: 40px;
+  gap: 40px; /* distancia entre imágenes */
   margin-top: 40px;
-
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* baja de línea en pantallas chicas */
 }
 
 .gallery-item {
-  width: 320px;
-  height: auto;
-
-  border-radius: 20px;
-
-  transition: transform 0.3s ease, filter 0.3s ease;
-  box-shadow: 0 0 25px rgba(0,255,153,0.2);
+  width: 320px; /* ancho de cada imagen */
+  height: auto; /* alto automático */
+  border-radius: 20px; /* esquinas redondeadas */
+  transition: transform 0.3s ease, filter 0.3s ease; /* animación suave */
+  box-shadow: 0 0 25px rgba(0,255,153,0.2); /* sombra suave verde */
 }
 
 .gallery-item:hover {
-  transform: scale(1.05);
-  filter: brightness(1.2);
+  transform: scale(1.05); /* se agranda al pasar el mouse */
+  filter: brightness(1.2); /* se ilumina */
 }
+
+/*   RESPONSIVE: MENU Y SECCIONES  */
 
 
 @media(max-width: 900px) {
 
-  /* muestro el menu hamburguesa en pantallas chicas */
   .hamburger {
-    display: block;
+    display: block; /* muestro botón hamburguesa */
   }
 
-  /* oculto el menu y lo cambio a columna para modo movil */
   .nav-links {
-    display: none;
+    display: none; /* oculto el menú normal */
     width: 100%;
-    flex-direction: column;
+    flex-direction: column; /* lo paso a columna */
     align-items: center;
     margin-top: 20px;
-    background: rgba(12, 15, 13, 0.95);
+    background: rgba(12, 15, 13, 0.95); /* fondo oscuro */
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid rgba(0,255,153,0.2);
+    border: 1px solid rgba(0,255,153,0.2); /* borde verde suave */
   }
 
-  /* cuando el menu esta activo lo muestro */
   .nav-links.active {
-    display: flex;
+    display: flex; /* muestro el menú cuando está activo */
   }
 
-  /* ajusto los enlaces para que ocupen todo el ancho y queden centrados */
   .nav-links a {
-    margin: 10px 0;
-    font-size: 1.2em;
+    margin: 10px 0; /* separo vertical */
+    font-size: 1.2em; /* texto más grande */
     width: 100%;
     text-align: center;
     padding: 10px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* línea separadora */
   }
 
-  /* acomodo el boton de idioma para que quede centrado */
   .lang-btn {
-    margin: 20px 0 0 0;
+    margin: 20px 0 0 0; /* lo acomodo debajo */
     width: 100%;
     text-align: center;
   }
 
-  /* agrego espacio arriba de las secciones para que no las tape el menu */
   #hero,
   #about,
   #contact {
-    padding-top: 80px;
+    padding-top: 80px; /* da espacio para que no los tape el header */
   }
 
-  /* hago que el hero se adapte en altura en pantallas chicas */
   #hero {
-    height: auto;
-    min-height: 100vh;
+    height: auto; /* altura automática */
+    min-height: 100vh; /* mínima: toda la pantalla */
   }
 
-  /* corrijo el hero si tiene una altura fija puesta en linea */
   section#hero[style*="height:80vh"] {
     height: auto !important;
     min-height: 80vh !important;
   }
 
-  /* reduzco el padding de varias secciones para moviles */
   #info,
   #mision,
   #impacto,
   #aliados,
   #valores,
   #ventajas {
-    padding: 60px 5%;
+    padding: 60px 5%; /* reduce el padding en pantallas chicas */
   }
 
-  /* padding especial para la seccion de contacto en celular */
   #contact {
-    padding: 80px 5% 60px 5%;
+    padding: 80px 5% 60px 5%; /* ajuste especial del contacto */
   }
 }
 
+/*  PANTALLAS MUY CHICAS (<600px)  */
 
 
-/* estilos para pantallas muy chicas tipo celular */
 @media(max-width: 600px) {
 
-  /* achico los titulos del hero */
   .hero-content h1 {
-    font-size: 2.5em;
+    font-size: 2.5em; /* achico título */
   }
 
   .hero-content h2 {
-    font-size: 1.3em;
+    font-size: 1.3em; /* subtítulo más chico */
   }
 
-  /* se reduce el tamaño del parrafo para mejor lectura */
   .hero-content p {
-    font-size: 1em;
+    font-size: 1em; /* texto más chico */
     line-height: 1.5;
   }
 
-  /* hago que cada caja ocupe toda la fila */
   .info-box {
-    flex: 1 1 100%;
+    flex: 1 1 100%; /* que ocupen toda la fila */
   }
 
-  /* se achica la imagen del dron para que entre en pantalla */
   .drone-image img {
-    width: 200px;
+    width: 200px; /* imagen del dron más chica */
   }
 
   .drone-assemble {
     width: 200px;
   }
 
-  /* se reduce el tamaño de los titulos de las secciones */
   #mision h2,
   #impacto h2,
   #aliados h2,
   #valores h3,
   #ventajas h3 {
-    font-size: 1.8em;
+    font-size: 1.8em; /* títulos más chicos */
   }
 
-  
   #mision p,
   #impacto p,
   #aliados p,
   #about p,
   .contact-hero p {
-    font-size: 1em;
+    font-size: 1em; /* texto más chico */
   }
 
-
   .adv-card {
-    padding: 20px;
+    padding: 20px; /* menos padding */
   }
 
   .adv-card h4 {
@@ -880,19 +842,18 @@ section#hero[style*="height:80vh"] {
 }
 
 
+/*   PARA TABLETS (<700px)  */
 
-/* ajustes para pantallas medianas tipo tablets */
+
 @media(max-width: 700px) {
 
-  /* junto la info de contacto en columna */
   .contact-container {
-    flex-direction: column;
+    flex-direction: column; /* pongo formulario + info en columna */
     align-items: center;
   }
 
-  /* para que cada bloque ocupe todo el ancho en vertical */
   .contact-info,
   .contact-form {
-    width: 100%;
+    width: 100%; /* que ocupen el ancho completo */
   }
 }
